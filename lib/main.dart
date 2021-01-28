@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:seamless/cubit/main_cubit.dart';
 
+import 'package:seamless/views/drawer_view.dart';
 import 'views/animated_app_bar.dart';
+import 'package:seamless/views/home_view.dart';
 import 'package:seamless/views/about_view.dart';
 import 'package:seamless/views/services_view.dart';
 import 'package:seamless/views/featured_view.dart';
@@ -40,7 +42,7 @@ class MainApp extends StatelessWidget {
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
           headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          headline6: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
 
@@ -77,18 +79,21 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
   AnimationController _colorAnimationController;
   Animation _colorTween;
 
-  RenderBox box;
-  Offset position;
-  double y;
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   final homeKey = GlobalKey();
+  final aboutKey = GlobalKey();
+  final servicesKey = GlobalKey();
+  final featuredKey = GlobalKey();
+  final teamKey = GlobalKey();
+  final contactKey = GlobalKey();
 
   @override
   void initState() {
     //Animation Controller and tween
     _colorAnimationController =
         AnimationController(vsync: this, duration: Duration(seconds: 0));
-    _colorTween = ColorTween(begin: Colors.transparent, end: Colors.red)
+    _colorTween = ColorTween(begin: Colors.transparent, end: Colors.white)
         .animate(_colorAnimationController);
 
     //Scroll controller and listener
@@ -107,45 +112,69 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MainCubit, MainState>(
+    return BlocBuilder<MainCubit, String>(
       builder: (context, state) {
         return Scaffold(
           extendBodyBehindAppBar: true,
+          key: scaffoldKey,
+          drawer: DrawerView(
+            pageChange: (page) {
+              if (page == 'home') {
+                context.read<MainCubit>().home(homeKey);
+              } else if (page == 'about') {
+                context.read<MainCubit>().about(aboutKey);
+              } else if (page == 'services') {
+                context.read<MainCubit>().services(servicesKey);
+              } else if (page == 'featured') {
+                context.read<MainCubit>().featured(featuredKey);
+              } else if (page == 'team') {
+                context.read<MainCubit>().team(teamKey);
+              } else if (page == 'contact') {
+                context.read<MainCubit>().contact(contactKey);
+              }
+            },
+          ),
           appBar: AnimatedAppBar(
+            scaffoldKey: scaffoldKey,
             colorAnimationController: _colorAnimationController,
             colorTween: _colorTween,
+            // selected: state,
+            pageChange: (page) {
+              if (page == 'home') {
+                context.read<MainCubit>().home(homeKey);
+              } else if (page == 'about') {
+                context.read<MainCubit>().about(aboutKey);
+              } else if (page == 'services') {
+                context.read<MainCubit>().services(servicesKey);
+              } else if (page == 'featured') {
+                context.read<MainCubit>().featured(featuredKey);
+              } else if (page == 'team') {
+                context.read<MainCubit>().team(teamKey);
+              } else if (page == 'contact') {
+                context.read<MainCubit>().contact(contactKey);
+              }
+            },
           ),
-
-          // There is alot going on here.
-          // The Notification Listener is specifically for the coloring of the app bar -- removed
-          // And the controller is so I can scroll to other places. I think.
-
+          //==================================================================
           body: Scrollbar(
-            child: ListView(
-              physics: ClampingScrollPhysics(),
+            child: SingleChildScrollView(
               //Gotta remove that ton of pad
               padding: EdgeInsets.only(top: 0),
               controller: _scrollController,
-              children: [
-                AboutView(key: homeKey),
-                ServicesView(),
-                FeaturedView(),
-                TeamView(),
-                ContactView(),
-              ],
+              child: Container(
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    HomeView(key: homeKey),
+                    AboutView(key: aboutKey),
+                    ServicesView(key: servicesKey),
+                    FeaturedView(key: featuredKey),
+                    TeamView(key: teamKey),
+                    ContactView(key: contactKey),
+                  ],
+                ),
+              ),
             ),
-          ),
-          bottomNavigationBar: RaisedButton(
-            onPressed: () => {
-              print(homeKey),
-              box = homeKey.currentContext.findRenderObject(),
-              position =
-                  box.localToGlobal(Offset.zero), //this is global position
-              y = position.dy,
-              _scrollController.animateTo(y,
-                  curve: Curves.ease, duration: const Duration(seconds: 1)),
-            },
-            child: Text("Scroll to data"),
           ),
         );
       },
