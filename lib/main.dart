@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 import 'package:seamless/cubit/main_cubit.dart';
 
@@ -29,6 +30,8 @@ void main() {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -36,21 +39,40 @@ class MainApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
 
         // Define the default font family.
-        // fontFamily: 'Georgia',
+        // fontFamily: 'Athelas',
 
-        // Define the default TextTheme. Use this to specify the default
-        // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
-          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          headline6: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+          headline1: TextStyle(
+            fontFamily: "Arial",
+            fontWeight: FontWeight.w700,
+            // color: Color(0xFF1B1B26),
+            fontSize: 20,
+          ),
+          headline2: TextStyle(
+            fontFamily: "Arial",
+            fontWeight: FontWeight.w900,
+            // color: Color(0xFF1B1B26),
+            fontSize: 12,
+          ),
+          headline3: TextStyle(
+            fontFamily: "Athelas",
+            fontWeight: FontWeight.w900,
+            color: Colors.red,
+            fontSize: 18,
+          ),
+          headline4: TextStyle(
+            fontFamily: "Athelas",
+            fontWeight: FontWeight.w700,
+            // color: Color(0xFF1B1B26),
+            fontSize: 48,
+          ),
         ),
 
         //Setting the navigation text button theme to change color on hover
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
             textStyle: MaterialStateProperty.all<TextStyle>(
-              TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+              TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
@@ -107,7 +129,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
   _scrollListener() {
     final _scrollPozish = _scrollController.position.pixels;
     context.read<MainCubit>().scrollPozish(_scrollPozish);
-    _colorAnimationController.animateTo(_scrollPozish / 100);
+    _colorAnimationController.animateTo(_scrollPozish / 300);
   }
 
   @override
@@ -163,6 +185,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
               controller: _scrollController,
               child: Container(
                 width: double.infinity,
+                //Making this a stack so that I can align widgets between other widgets
                 child: Column(
                   children: [
                     HomeView(key: homeKey),

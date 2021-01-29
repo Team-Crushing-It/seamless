@@ -29,7 +29,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
             builder: (context, child) => Container(
               color: colorTween.value,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(
@@ -54,13 +54,14 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: TextButton(
                             child: Text(
                               'HOME',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: (state == 'home')
-                                    ? Colors.red
-                                    : Colors.blue[900],
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: (state == 'home')
+                                        ? Colors.red
+                                        : Colors.blue[900],
+                                  ),
                             ),
                             onPressed: () {
                               print('Pressed');
@@ -73,13 +74,14 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: TextButton(
                             child: Text(
                               'ABOUT',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: (state == 'about')
-                                    ? Colors.red
-                                    : Colors.blue[900],
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: (state == 'about')
+                                        ? Colors.red
+                                        : Colors.blue[900],
+                                  ),
                             ),
                             onPressed: () {
                               print('Pressed');
@@ -92,13 +94,14 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: TextButton(
                             child: Text(
                               'SERVICES',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: (state == 'services')
-                                    ? Colors.red
-                                    : Colors.blue[900],
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: (state == 'services')
+                                        ? Colors.red
+                                        : Colors.blue[900],
+                                  ),
                             ),
                             onPressed: () {
                               print('Pressed');
@@ -111,13 +114,14 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: TextButton(
                             child: Text(
                               'FEATURED',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: (state == 'featured')
-                                    ? Colors.red
-                                    : Colors.blue[900],
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: (state == 'featured')
+                                        ? Colors.red
+                                        : Colors.blue[900],
+                                  ),
                             ),
                             onPressed: () {
                               print('Pressed');
@@ -130,13 +134,14 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: TextButton(
                             child: Text(
                               'TEAM',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: (state == 'team')
-                                    ? Colors.red
-                                    : Colors.blue[900],
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: (state == 'team')
+                                        ? Colors.red
+                                        : Colors.blue[900],
+                                  ),
                             ),
                             onPressed: () {
                               print('Pressed');
@@ -149,13 +154,14 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: TextButton(
                             child: Text(
                               'CONTACT',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: (state == 'contact')
-                                    ? Colors.red
-                                    : Colors.blue[900],
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: (state == 'contact')
+                                        ? Colors.red
+                                        : Colors.blue[900],
+                                  ),
                             ),
                             onPressed: () {
                               print('Pressed');
@@ -166,30 +172,34 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ],
                     ),
                   ),
-                  Material(
-                    color: Colors.red,
-                    elevation: 10,
-                    child: OutlinedButton(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Icon(Icons.phone, color: Colors.white),
-                            ),
-                            Text(
-                              '(305) 399 - 3000',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  // fontFamily: "Montserrat",
-                                  fontWeight: FontWeight.w100,
-                                  fontSize: 16),
-                            ),
-                          ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 10),
+                    child: Material(
+                      color: Colors.red,
+                      elevation: 10,
+                      child: OutlinedButton(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(Icons.phone, color: Colors.white),
+                              ),
+                              Text(
+                                '(305) 399 - 3000',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    // fontFamily: "Montserrat",
+                                    fontWeight: FontWeight.w100,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
+                        onPressed: () {},
                       ),
-                      onPressed: () {},
                     ),
                   )
                 ],

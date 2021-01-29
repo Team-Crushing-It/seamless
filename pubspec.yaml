@@ -26,6 +26,7 @@ dependencies:
   responsive_builder: ^0.1.2
   bloc: ^6.1.0
   flutter_bloc: ^6.1.0
+  google_fonts: ^1.1.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -51,7 +52,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/gutter_logo.png
+    - assets/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -65,17 +66,23 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: Arial
+      fonts:
+        - asset: assets/fonts/Arial-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Arial-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Arial.ttf
+          weight: 300
+        
+    - family: Athelas
+      fonts:
+        - asset: assets/fonts/Athelas-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Athelas-Regular.ttf
+          weight: 300
+        
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
