@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
 import 'package:seamless/cubit/main_cubit.dart';
 
@@ -13,6 +12,7 @@ import 'package:seamless/views/services_view.dart';
 import 'package:seamless/views/featured_view.dart';
 import 'package:seamless/views/team_view.dart';
 import 'package:seamless/views/contact_view.dart';
+import 'package:seamless/views/footer.dart';
 
 class PageObserver extends BlocObserver {
   @override
@@ -30,28 +30,22 @@ void main() {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
 
-        // Define the default font family.
-        // fontFamily: 'Athelas',
-
         textTheme: TextTheme(
           headline1: TextStyle(
+            color: Colors.white,
             fontFamily: "Arial",
             fontWeight: FontWeight.w700,
-            // color: Color(0xFF1B1B26),
-            fontSize: 20,
+            fontSize: 18,
           ),
           headline2: TextStyle(
             fontFamily: "Arial",
             fontWeight: FontWeight.w900,
-            // color: Color(0xFF1B1B26),
             fontSize: 12,
           ),
           headline3: TextStyle(
@@ -65,6 +59,33 @@ class MainApp extends StatelessWidget {
             fontWeight: FontWeight.w700,
             // color: Color(0xFF1B1B26),
             fontSize: 48,
+          ),
+          headline5: TextStyle(
+            fontFamily: "Athelas",
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+            fontSize: 32,
+          ),
+          headline6: TextStyle(
+            fontFamily: "Arial",
+            fontWeight: FontWeight.w700,
+            fontSize: 24,
+          ),
+          bodyText1: TextStyle(
+            fontFamily: "Arial",
+            fontWeight: FontWeight.w900,
+            // color: Color(0xFF1B1B26),
+            fontSize: 12,
+            height: 2,
+            letterSpacing: 2.0,
+          ),
+          bodyText2: TextStyle(
+            fontFamily: "Arial",
+            fontWeight: FontWeight.w300,
+            color: Colors.grey[700],
+            fontSize: 12,
+            height: 2,
+            letterSpacing: 2.0,
           ),
         ),
 
@@ -125,6 +146,14 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    _colorAnimationController.dispose();
+    _scrollController.dispose();
+
+    super.dispose();
+  }
+
   //Passing the position from the controller to the cubit
   _scrollListener() {
     final _scrollPozish = _scrollController.position.pixels;
@@ -160,7 +189,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
             scaffoldKey: scaffoldKey,
             colorAnimationController: _colorAnimationController,
             colorTween: _colorTween,
-            // selected: state,
+            state: state,
             pageChange: (page) {
               if (page == 'home') {
                 context.read<MainCubit>().home(homeKey);
@@ -189,16 +218,23 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                 child: Column(
                   children: [
                     HomeView(key: homeKey),
-                    AboutView(key: aboutKey),
+                    AboutView(
+                      key: aboutKey,
+                      state: state,
+                      pageChange: () =>
+                          {context.read<MainCubit>().contact(contactKey)},
+                    ),
                     ServicesView(key: servicesKey),
                     FeaturedView(key: featuredKey),
                     TeamView(key: teamKey),
                     ContactView(key: contactKey),
+                    Footer(),
                   ],
                 ),
               ),
             ),
           ),
+          // bottomNavigationBar: Footer(),
         );
       },
     );

@@ -17,15 +17,15 @@ class MainCubit extends Cubit<String> {
 
   void scrollPozish(double pos) => {
         print(pos),
-        if (pos >= 0 && pos < 700)
+        if (pos >= 0 && pos < 200)
           {
             emit('home'),
           }
-        else if (pos >= 700 && pos < 1700)
+        else if (pos >= 200 && pos < 750)
           {
             emit('about'),
           }
-        else if (pos >= 1700 && pos < 2700)
+        else if (pos >= 750 && pos < 2700)
           {
             emit('services'),
           }
