@@ -217,16 +217,16 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                 //Making this a stack so that I can align widgets between other widgets
                 child: Column(
                   children: [
-                    // HomeView(key: homeKey),
-                    // AboutView(
-                    //   key: aboutKey,
-                    //   state: state,
-                    //   pageChange: () =>
-                    //       {context.read<MainCubit>().contact(contactKey)},
-                    // ),
-                    // ServicesView(key: servicesKey),
-                    // FeaturedView(key: featuredKey),
-                    // TeamView(key: teamKey),
+                    HomeView(key: homeKey),
+                    AboutView(
+                      key: aboutKey,
+                      state: state,
+                      pageChange: () =>
+                          {context.read<MainCubit>().contact(contactKey)},
+                    ),
+                    ServicesView(key: servicesKey),
+                    FeaturedView(key: featuredKey),
+                    TeamView(key: teamKey),
                     ContactView(key: contactKey),
                     Footer(),
                   ],
