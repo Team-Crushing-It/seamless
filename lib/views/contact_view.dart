@@ -15,99 +15,158 @@ class ContactView extends StatefulWidget {
 }
 
 class _ContactViewState extends State<ContactView> {
-  String linkMaps =
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.635218720348!2d-80.27437088522518!3d26.273499983407014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d905546f28cc9f%3A0xca7ba167bdb0252c!2s3456%20NW%20109th%20Way%2C%20Coral%20Springs%2C%20FL%2033065!5e0!3m2!1sen!2sus!4v1612321059698!5m2!1sen!2sus";
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 100.0),
-          child: Container(),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 20,
+    return Container(
+      color: Color(0xFFF5F9FF),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 100.0),
+            child: Container(),
           ),
-          child:
-              Text('CONTACT US', style: Theme.of(context).textTheme.headline3),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 20.0,
-            bottom: 40,
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: Text('CONTACT US',
+                style: Theme.of(context).textTheme.headline3),
           ),
-          child: Text('GET IN TOUCH',
-              style: Theme.of(context).textTheme.headline5),
-        ),
-        Container(
-          width: 700,
-          child: Column(
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 20.0,
+              bottom: 40,
+            ),
+            child: Text('GET IN TOUCH',
+                style: Theme.of(context).textTheme.headline5),
+          ),
+          Container(
+            width: 700,
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.person, color: Colors.red),
+                    title: TextFormField(
+                      autofocus: true,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter a name';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        hintText: "Name",
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.phone, color: Colors.red),
+                    title: TextFormField(
+                      autofocus: true,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter a number';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        hintText: "Phone",
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.email, color: Colors.red),
+                    title: TextFormField(
+                      autofocus: true,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter an email';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        hintText: "Email",
+                      ),
+                    ),
+                  ),
+                  const Divider(
+                    height: 1.0,
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.message, color: Colors.red),
+                    title: TextFormField(
+                      autofocus: true,
+                      keyboardType: TextInputType.multiline,
+                      minLines: 4,
+                      maxLines: 4,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter a message';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        hintText: "Message",
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      color: Colors.red,
+                      child: OutlinedButton(
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'SUBMIT',
+                            style: Theme.of(context).textTheme.headline1,
+                          ),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            // If the form is valid, display a Snackbar.
+                            Scaffold.of(context).showSnackBar(
+                                SnackBar(content: Text('Processing Data')));
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 100.0),
+            child: Container(),
+          ),
+          Row(
             children: [
-              ListTile(
-                leading: const Icon(Icons.person, color: Colors.red),
-                title: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Name",
-                  ),
+              Container(
+                height: 700,
+                color: Colors.red,
+                child: Image.network(
+                  'https://i.imgur.com/GKqdjYvh.png',
+                  fit: BoxFit.fill,
                 ),
               ),
-              ListTile(
-                leading: const Icon(Icons.phone, color: Colors.red),
-                title: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Phone",
+              Expanded(
+                child: Container(
+                  height: 700,
+                  child: Image.network(
+                    'https://i.imgur.com/JHcm5wAl.jpg',
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.email, color: Colors.red),
-                title: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Email",
-                  ),
-                ),
-              ),
-              const Divider(
-                height: 1.0,
-              ),
-              ListTile(
-                leading: const Icon(Icons.message, color: Colors.red),
-                title: TextField(
-                  keyboardType: TextInputType.multiline,
-                  minLines: 4,
-                  maxLines: 4,
-                  decoration: InputDecoration(
-                    hintText: "Message",
-                  ),
-                ),
-              ),
+              )
             ],
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 100.0),
-          child: Container(),
-        ),
-        Row(
-          children: [
-            Container(
-              color: Colors.red,
-              child: new IframeScreen(800, 700, linkMaps),
-            ),
-            Expanded(
-              child: Container(
-                height: 700,
-                child: Image.asset(
-                  'assets/gutters2.jpg',
-                  fit: BoxFit.fitHeight,
-                ),
-              ),
-            )
-          ],
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
