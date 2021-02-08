@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './UiFake.dart' if (dart.library.html) 'dart:ui' as ui;
+import 'package:http/http.dart' as http;
 
 //ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
@@ -16,6 +17,54 @@ class ContactView extends StatefulWidget {
 
 class _ContactViewState extends State<ContactView> {
   final _formKey = GlobalKey<FormState>();
+  final textController = TextEditingController();
+
+  var fName = '';
+  var fNumber = '';
+  var fEmail = '';
+  var fMessage = '';
+  var _updateText = 'Sending to server..';
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    textController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Start listening to changes.
+    textController.addListener(_printLatestValue);
+  }
+
+  _printLatestValue() {
+    print("Text field: ${textController.text}");
+  }
+
+  Future postForm() async {
+    final response = await http.post(
+        // https://localhost:5001/mail-server-301117/us-central1/
+        // "https://us-central1-mail-server-301117.cloudfunctions.net/sendMail?type=seamlesse&location=testing&name=" +
+
+        "https://localhost:5000/mail-server-301117/us-central1/sendMail?type=seamlesse&location=testing&name=" +
+            fName +
+            "&number" +
+            fNumber +
+            "&email" +
+            fEmail +
+            "&message" +
+            fMessage);
+
+    if (response.statusCode == 200) {
+      print('success');
+      _updateText = 'Form succeeded !';
+    } else {
+      print('not success');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +105,7 @@ class _ContactViewState extends State<ContactView> {
                         if (value.isEmpty) {
                           return 'Please enter a name';
                         }
+                        fName = value;
                         return null;
                       },
                       decoration: InputDecoration(
@@ -71,6 +121,7 @@ class _ContactViewState extends State<ContactView> {
                         if (value.isEmpty) {
                           return 'Please enter a number';
                         }
+                        fNumber = value;
                         return null;
                       },
                       decoration: InputDecoration(
@@ -86,6 +137,7 @@ class _ContactViewState extends State<ContactView> {
                         if (value.isEmpty) {
                           return 'Please enter an email';
                         }
+                        fEmail = value;
                         return null;
                       },
                       decoration: InputDecoration(
@@ -107,6 +159,7 @@ class _ContactViewState extends State<ContactView> {
                         if (value.isEmpty) {
                           return 'Please enter a message';
                         }
+                        fMessage = value;
                         return null;
                       },
                       decoration: InputDecoration(
@@ -128,9 +181,12 @@ class _ContactViewState extends State<ContactView> {
                         ),
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
-                            // If the form is valid, display a Snackbar.
+                            // If the form is valid, send email.
+                            postForm();
+                            // if gucci, display a Snackbar.
+
                             Scaffold.of(context).showSnackBar(
-                                SnackBar(content: Text('Processing Data')));
+                                SnackBar(content: Text(_updateText)));
                           }
                         },
                       ),
