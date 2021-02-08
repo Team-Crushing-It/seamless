@@ -228,7 +228,19 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                     FeaturedView(key: featuredKey),
                     TeamView(key: teamKey),
                     ContactView(key: contactKey),
-                    Footer(),
+                    Footer(
+                      pageChange: (page) {
+                        if (page == 'home') {
+                          context.read<MainCubit>().home(homeKey);
+                        } else if (page == 'about') {
+                          context.read<MainCubit>().about(aboutKey);
+                        } else if (page == 'services') {
+                          context.read<MainCubit>().services(servicesKey);
+                        } else if (page == 'featured') {
+                          context.read<MainCubit>().featured(featuredKey);
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),

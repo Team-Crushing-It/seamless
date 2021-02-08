@@ -185,21 +185,22 @@ class _ContactViewState extends State<ContactView> {
 
                             Scaffold.of(context).showSnackBar(
                               SnackBar(
-                                  duration: const Duration(seconds: 20),
-                                  content: FutureBuilder<String>(
-                                    future: postForm(),
-                                    builder: (context, snapshot) {
-                                      if (snapshot.hasData) {
-                                        print(snapshot.data);
-                                        return Text('Message Sent !');
-                                      } else if (snapshot.hasError) {
-                                        return Text("${snapshot.error}");
-                                      }
-                                      return Text('Sending now..');
-                                      // By default, show a loading spinner.
-                                      // return CircularProgressIndicator();
-                                    },
-                                  )),
+                                duration: const Duration(seconds: 20),
+                                content: FutureBuilder<String>(
+                                  future: postForm(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.hasData) {
+                                      _formKey.currentState.reset();
+                                      print(snapshot.data);
+
+                                      return Text('Message Sent !');
+                                    } else if (snapshot.hasError) {
+                                      return Text("${snapshot.error}");
+                                    }
+                                    return Text('Sending now..');
+                                  },
+                                ),
+                              ),
                             );
                           }
                         },
@@ -237,68 +238,6 @@ class _ContactViewState extends State<ContactView> {
           ),
         ],
       ),
-    );
-  }
-}
-
-//--------------------------------------------------------------------------I
-//Code based on: Aseem Wangoo (Mar-22)                                      I
-//https://medium.com/flutter-community/flutter-web-and-iframe-f26399aa1e2a  I
-//--------------------------------------------------------------------------I
-
-// ignore: must_be_immutable
-class IframeScreen extends StatefulWidget {
-  double w;
-  double h;
-  String src;
-
-  IframeScreen(double _w, double _h, String _src) {
-    this.w = _w;
-    this.h = _h;
-    this.src = _src;
-  }
-
-  @override
-  _IframeScreenState createState() => _IframeScreenState(w, h, src);
-}
-
-class _IframeScreenState extends State<IframeScreen> {
-  Widget _iframeWidget;
-  final IFrameElement _iframeElement = IFrameElement();
-  double _width;
-  double _height;
-  String _source;
-
-  _IframeScreenState(double _w, double _h, String _src) {
-    _width = _w;
-    _height = _h;
-    _source = _src;
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _iframeElement.src = _source;
-    _iframeElement.style.border = 'none';
-
-    // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(
-      'iframeElement',
-      (int viewId) => _iframeElement,
-    );
-
-    _iframeWidget = HtmlElementView(
-      key: UniqueKey(),
-      viewType: 'iframeElement',
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: _height,
-      width: _width,
-      child: _iframeWidget,
     );
   }
 }

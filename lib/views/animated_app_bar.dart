@@ -36,7 +36,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                 height: 200,
                 child: IconButton(
                   // Your drawer Icon
-                  onPressed: () => {pageChange('home')},
+                  onPressed: () => pageChange('home'),
                   // _scaffoldKey.currentState.openDrawer()),
                   icon: Image.asset(
                     'assets/gutter_logo.png',
