@@ -17,52 +17,49 @@ class ContactView extends StatefulWidget {
 
 class _ContactViewState extends State<ContactView> {
   final _formKey = GlobalKey<FormState>();
-  final textController = TextEditingController();
 
   var fName = '';
   var fNumber = '';
   var fEmail = '';
   var fMessage = '';
-  var _updateText = 'Sending to server..';
+  var updateText = '';
 
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
-    textController.dispose();
+
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-
-    // Start listening to changes.
-    textController.addListener(_printLatestValue);
   }
 
-  _printLatestValue() {
-    print("Text field: ${textController.text}");
-  }
-
-  Future postForm() async {
+  Future<String> postForm() async {
+    // print(fName);
+    // print(fNumber);
+    // print(fEmail);
+    // print(fMessage);
     final response = await http.post(
         // https://localhost:5001/mail-server-301117/us-central1/
         // "https://us-central1-mail-server-301117.cloudfunctions.net/sendMail?type=seamlesse&location=testing&name=" +
 
-        "https://localhost:5000/mail-server-301117/us-central1/sendMail?type=seamlesse&location=testing&name=" +
+        "https://us-central1-mail-server-301117.cloudfunctions.net/sendMail?type=gutters&location=testing&name=" +
             fName +
-            "&number" +
+            "&number=" +
             fNumber +
-            "&email" +
+            "&email=" +
             fEmail +
-            "&message" +
+            "&message=" +
             fMessage);
 
     if (response.statusCode == 200) {
       print('success');
-      _updateText = 'Form succeeded !';
+      return 'success';
     } else {
       print('not success');
+      return 'not success';
     }
   }
 
@@ -182,11 +179,28 @@ class _ContactViewState extends State<ContactView> {
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             // If the form is valid, send email.
-                            postForm();
+                            // postForm();
+
                             // if gucci, display a Snackbar.
 
                             Scaffold.of(context).showSnackBar(
-                                SnackBar(content: Text(_updateText)));
+                              SnackBar(
+                                  duration: const Duration(seconds: 20),
+                                  content: FutureBuilder<String>(
+                                    future: postForm(),
+                                    builder: (context, snapshot) {
+                                      if (snapshot.hasData) {
+                                        print(snapshot.data);
+                                        return Text('Message Sent !');
+                                      } else if (snapshot.hasError) {
+                                        return Text("${snapshot.error}");
+                                      }
+                                      return Text('Sending now..');
+                                      // By default, show a loading spinner.
+                                      // return CircularProgressIndicator();
+                                    },
+                                  )),
+                            );
                           }
                         },
                       ),
