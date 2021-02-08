@@ -99,7 +99,7 @@ class _ContactViewState extends State<ContactView> {
                   ListTile(
                     leading: const Icon(Icons.message, color: Colors.red),
                     title: TextFormField(
-                      autofocus: true,
+                      // autofocus: true,
                       keyboardType: TextInputType.multiline,
                       minLines: 4,
                       maxLines: 4,

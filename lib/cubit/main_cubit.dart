@@ -25,19 +25,19 @@ class MainCubit extends Cubit<String> {
           {
             emit('about'),
           }
-        else if (pos >= 750 && pos < 2700)
+        else if (pos >= 750 && pos < 2480)
           {
             emit('services'),
           }
-        else if (pos >= 2700 && pos < 3700)
+        else if (pos >= 2480 && pos < 3312)
           {
             emit('featured'),
           }
-        else if (pos >= 3700 && pos < 4700)
+        else if (pos >= 3312 && pos < 4898)
           {
             emit('team'),
           }
-        else if (pos >= 4700 && pos < 5700)
+        else if (pos >= 4898 && pos < 6082)
           {
             emit('contact'),
           }
