@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:seamless/cubit/main_cubit.dart';
+import 'package:seamless_gutters/cubit/main_cubit.dart';
 
 class DrawerView extends StatelessWidget {
   final Function(String) pageChange;

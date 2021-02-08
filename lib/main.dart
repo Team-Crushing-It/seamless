@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:seamless/cubit/main_cubit.dart';
+import 'package:seamless_gutters/cubit/main_cubit.dart';
 
-import 'package:seamless/views/drawer_view.dart';
+import 'package:seamless_gutters/views/drawer_view.dart';
 import 'views/animated_app_bar.dart';
-import 'package:seamless/views/home_view.dart';
-import 'package:seamless/views/about_view.dart';
-import 'package:seamless/views/services_view.dart';
-import 'package:seamless/views/featured_view.dart';
-import 'package:seamless/views/team_view.dart';
-import 'package:seamless/views/contact_view.dart';
-import 'package:seamless/views/footer.dart';
+import 'package:seamless_gutters/views/home_view.dart';
+import 'package:seamless_gutters/views/about_view.dart';
+import 'package:seamless_gutters/views/services_view.dart';
+import 'package:seamless_gutters/views/featured_view.dart';
+import 'package:seamless_gutters/views/team_view.dart';
+import 'package:seamless_gutters/views/contact_view.dart';
+import 'package:seamless_gutters/views/footer.dart';
 
 class PageObserver extends BlocObserver {
   @override

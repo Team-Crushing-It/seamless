@@ -51,7 +51,7 @@ class _ContactViewState extends State<ContactView> {
                   ListTile(
                     leading: const Icon(Icons.person, color: Colors.red),
                     title: TextFormField(
-                      autofocus: true,
+                      // autofocus: true,
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter a name';
@@ -66,7 +66,7 @@ class _ContactViewState extends State<ContactView> {
                   ListTile(
                     leading: const Icon(Icons.phone, color: Colors.red),
                     title: TextFormField(
-                      autofocus: true,
+                      // autofocus: true,
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter a number';
@@ -81,7 +81,7 @@ class _ContactViewState extends State<ContactView> {
                   ListTile(
                     leading: const Icon(Icons.email, color: Colors.red),
                     title: TextFormField(
-                      autofocus: true,
+                      // autofocus: true,
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter an email';
