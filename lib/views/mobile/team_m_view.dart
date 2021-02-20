@@ -39,15 +39,10 @@ class _TeamMViewState extends State<TeamMView> {
                 child: Text('CERTIFIED EXPERTS',
                     style: Theme.of(context).textTheme.headline5),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.network('https://i.imgur.com/UUcwLSbl.jpg'),
-                  Image.network('https://i.imgur.com/IBVRB7vl.jpg'),
-                  Image.network('https://i.imgur.com/hL9psgnl.jpg'),
-                  Image.network('https://i.imgur.com/X3Jy8Jil.jpg'),
-                ],
-              ),
+              Image.network('https://i.imgur.com/UUcwLSbl.jpg'),
+              Image.network('https://i.imgur.com/IBVRB7vl.jpg'),
+              Image.network('https://i.imgur.com/hL9psgnl.jpg'),
+              Image.network('https://i.imgur.com/X3Jy8Jil.jpg'),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),
                 child: Container(),
@@ -75,7 +70,7 @@ class _TeamMViewState extends State<TeamMView> {
                 padding: const EdgeInsets.only(top: 80.0),
                 child: Center(
                   child: Container(
-                    width: MediaQuery.of(context).size.width - 200,
+                    width: MediaQuery.of(context).size.width - 50,
                     height: 700,
                     child: Image.network('https://i.imgur.com/ZexNYsyh.jpg',
                         fit: BoxFit.cover),

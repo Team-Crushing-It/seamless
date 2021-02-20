@@ -283,29 +283,29 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                   child: Column(
                     children: [
                       HomeMView(key: homeKey),
-                      // AboutMView(
-                      //   key: aboutKey,
-                      //   state: state,
-                      //   pageChange: () =>
-                      //       {context.read<MainCubit>().contact(contactKey)},
-                      // ),
-                      // ServicesMView(key: servicesKey),
-                      // FeaturedMView(key: featuredKey),
-                      // TeamMView(key: teamKey),
-                      // ContactMView(key: contactKey),
-                      // FooterM(
-                      //   pageChange: (page) {
-                      //     if (page == 'home') {
-                      //       context.read<MainCubit>().home(homeKey);
-                      //     } else if (page == 'about') {
-                      //       context.read<MainCubit>().about(aboutKey);
-                      //     } else if (page == 'services') {
-                      //       context.read<MainCubit>().services(servicesKey);
-                      //     } else if (page == 'featured') {
-                      //       context.read<MainCubit>().featured(featuredKey);
-                      //     }
-                      //   },
-                      // ),
+                      AboutMView(
+                        key: aboutKey,
+                        state: state,
+                        pageChange: () =>
+                            {context.read<MainCubit>().contact(contactKey)},
+                      ),
+                      ServicesMView(key: servicesKey),
+                      FeaturedMView(key: featuredKey),
+                      TeamMView(key: teamKey),
+                      ContactMView(key: contactKey),
+                      FooterM(
+                        pageChange: (page) {
+                          if (page == 'home') {
+                            context.read<MainCubit>().home(homeKey);
+                          } else if (page == 'about') {
+                            context.read<MainCubit>().about(aboutKey);
+                          } else if (page == 'services') {
+                            context.read<MainCubit>().services(servicesKey);
+                          } else if (page == 'featured') {
+                            context.read<MainCubit>().featured(featuredKey);
+                          }
+                        },
+                      ),
                     ],
                   ),
                 ),

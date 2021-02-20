@@ -47,44 +47,44 @@ class _AboutMViewState extends State<AboutMView>
     return Padding(
       padding: const EdgeInsets.only(top: 80.0),
       child: Container(
-        height: 600,
-        child: Row(
+        // height: 1000,
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Stack(
-                  children: [
-                    Container(
-                      alignment: Alignment(1, -0.5),
-                      height: 500,
-                      child: Image.asset(
-                        'assets/group_about.png',
-                        scale: 1.5,
-                      ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Stack(
+                children: [
+                  Container(
+                    alignment: Alignment(1, -0.5),
+                    height: 300,
+                    child: Image.asset(
+                      'assets/group_about.png',
+                      scale: 1.5,
                     ),
-                    SlideTransition(
+                  ),
+                  Container(
+                    height: 300,
+                    child: SlideTransition(
                       position: Tween<Offset>(
                         begin: Offset(-1, 0),
                         end: Offset.zero,
                       ).animate(_slideController),
                       child: Container(
-                        alignment: Alignment(0.5, -0.2),
+                        alignment: Alignment(0, 0),
                         child: Image.asset(
                           'assets/animate_about.png',
                           scale: 1.5,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             // Right hand section with About Us
-            Expanded(
-                child: Container(
-              height: 600,
+            Container(
+              height: 700,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
@@ -138,7 +138,7 @@ class _AboutMViewState extends State<AboutMView>
                   ],
                 ),
               ),
-            )),
+            ),
           ],
         ),
       ),

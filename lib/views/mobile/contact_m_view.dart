@@ -215,26 +215,20 @@ class _ContactMViewState extends State<ContactMView> {
             padding: const EdgeInsets.only(bottom: 100.0),
             child: Container(),
           ),
-          Row(
-            children: [
-              Container(
-                height: 700,
-                color: Colors.red,
-                child: Image.network(
-                  'https://i.imgur.com/GKqdjYvh.png',
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 700,
-                  child: Image.network(
-                    'https://i.imgur.com/JHcm5wAl.jpg',
-                    fit: BoxFit.fitHeight,
-                  ),
-                ),
-              )
-            ],
+          Container(
+            width: double.infinity,
+            color: Colors.red,
+            child: Image.network(
+              'https://i.imgur.com/GKqdjYvh.png',
+              fit: BoxFit.fitHeight,
+            ),
+          ),
+          Container(
+            height: 400,
+            child: Image.network(
+              'https://i.imgur.com/JHcm5wAl.jpg',
+              fit: BoxFit.fitHeight,
+            ),
           ),
         ],
       ),
