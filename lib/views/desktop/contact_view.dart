@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './UiFake.dart' if (dart.library.html) 'dart:ui' as ui;
 import 'package:http/http.dart' as http;
-
+import 'package:seamless_gutters/extensions.dart';
 //ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
 import 'dart:ui' as ui;
@@ -114,6 +117,9 @@ class _ContactViewState extends State<ContactView> {
                     leading: const Icon(Icons.phone, color: Colors.red),
                     title: TextFormField(
                       // autofocus: true,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      ],
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter a number';
@@ -133,6 +139,8 @@ class _ContactViewState extends State<ContactView> {
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter an email';
+                        } else if (!value.isEmail) {
+                          return 'Please enter a valid email';
                         }
                         fEmail = value;
                         return null;
@@ -183,24 +191,36 @@ class _ContactViewState extends State<ContactView> {
 
                             // if gucci, display a Snackbar.
 
-                            Scaffold.of(context).showSnackBar(
-                              SnackBar(
-                                duration: const Duration(seconds: 20),
-                                content: FutureBuilder<String>(
-                                  future: postForm(),
-                                  builder: (context, snapshot) {
-                                    if (snapshot.hasData) {
-                                      _formKey.currentState.reset();
-                                      print(snapshot.data);
+                            showDialog(
+                              context: context,
+                              builder: (context) => FutureBuilder<String>(
+                                future: postForm(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    Timer(
+                                      Duration(seconds: 1),
+                                      () {
+                                        Navigator.of(context).pop();
+                                        _formKey.currentState.reset();
+                                      },
+                                    );
 
-                                      return Text('Message Sent !');
-                                    } else if (snapshot.hasError) {
-                                      return Text("${snapshot.error}");
-                                    }
-                                    return Text('Sending now..');
-                                  },
-                                ),
+                                    return Center(
+                                      child: Icon(
+                                        Icons.check,
+                                        color: Colors.green,
+                                        size: 80,
+                                      ),
+                                    );
+                                  } else if (snapshot.hasError) {
+                                    return Text("${snapshot.error}");
+                                  }
+                                  return Center(
+                                    child: CircularProgressIndicator(),
+                                  );
+                                },
                               ),
+                              barrierDismissible: false,
                             );
                           }
                         },

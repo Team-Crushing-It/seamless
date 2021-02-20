@@ -1,10 +1,14 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'UIFake_m.dart' if (dart.library.html) 'dart:ui' as ui;
 import 'package:http/http.dart' as http;
 
 //ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
 import 'dart:ui' as ui;
+import 'package:seamless_gutters/extensions.dart';
 
 class ContactMView extends StatefulWidget {
   final GlobalKey key;
@@ -41,6 +45,7 @@ class _ContactMViewState extends State<ContactMView> {
     // print(fNumber);
     // print(fEmail);
     // print(fMessage);
+
     final response = await http.post(
         // https://localhost:5001/mail-server-301117/us-central1/
         // "https://us-central1-mail-server-301117.cloudfunctions.net/sendMail?type=seamlesse&location=testing&name=" +
@@ -114,6 +119,9 @@ class _ContactMViewState extends State<ContactMView> {
                     leading: const Icon(Icons.phone, color: Colors.red),
                     title: TextFormField(
                       // autofocus: true,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      ],
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter a number';
@@ -133,6 +141,8 @@ class _ContactMViewState extends State<ContactMView> {
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter an email';
+                        } else if (!value.isEmail) {
+                          return 'Please enter a valid email';
                         }
                         fEmail = value;
                         return null;
@@ -176,12 +186,45 @@ class _ContactMViewState extends State<ContactMView> {
                             style: Theme.of(context).textTheme.headline1,
                           ),
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           if (_formKey.currentState.validate()) {
                             // If the form is valid, send email.
                             // postForm();
 
                             // if gucci, display a Snackbar.
+                            showDialog(
+                              context: context,
+                              builder: (context) => FutureBuilder<String>(
+                                future: postForm(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    Timer(
+                                      Duration(seconds: 1),
+                                      () {
+                                        Navigator.of(context).pop();
+                                        _formKey.currentState.reset();
+                                      },
+                                    );
+
+                                    return Center(
+                                      child: Icon(
+                                        Icons.check,
+                                        color: Colors.green,
+                                        size: 80,
+                                      ),
+                                    );
+                                  } else if (snapshot.hasError) {
+                                    return Text("${snapshot.error}");
+                                  }
+                                  return Center(
+                                    child: CircularProgressIndicator(),
+                                  );
+                                },
+                              ),
+                              barrierDismissible: false,
+                            );
+                            /*
+                            final String _postForm = await postForm();
 
                             Scaffold.of(context).showSnackBar(
                               SnackBar(
@@ -202,6 +245,7 @@ class _ContactMViewState extends State<ContactMView> {
                                 ),
                               ),
                             );
+                            */
                           }
                         },
                       ),
