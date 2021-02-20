@@ -22,6 +22,7 @@ class DrawerMView extends StatelessWidget {
                 child: InkWell(
                     onTap: () {
                       pageChange('home');
+                      Navigator.pop(context);
                     },
                     child: Image.network('https://i.imgur.com/vmopqmw.png')),
               ),
