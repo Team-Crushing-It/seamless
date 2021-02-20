@@ -60,12 +60,12 @@ class _TeamMViewState extends State<TeamMView> {
           width: double.infinity,
           child: Stack(
             children: [
-              Container(
-                child: Image.network(
-                  'https://i.imgur.com/0tBzmrX.png',
-                  scale: 1.75,
-                ),
-              ),
+              // Container(
+              //   child: Image.network(
+              //     'https://i.imgur.com/0tBzmrX.png',
+              //     scale: 1.75,
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.only(top: 80.0),
                 child: Center(

@@ -195,24 +195,62 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
         builder: (context, child) => Container(
           color: colorTween.value,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              IconButton(
-                  // Your drawer Icon
-                  onPressed: () => {
-                        scaffoldKey.currentState.openDrawer(),
-                      },
-                  icon: Icon(Icons.menu, color: Colors.black)),
-              SizedBox(
-                height: 200,
-                width: 200,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: IconButton(
-                  // Your drawer Icon
-                  onPressed: () => {},
-                  // _scaffoldKey.currentState.openDrawer()),
-                  icon: Image.asset(
+                    // Your drawer Icon
+                    onPressed: () => {
+                          scaffoldKey.currentState.openDrawer(),
+                        },
+                    icon: Icon(Icons.menu, color: Colors.black)),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                child: SizedBox(
+                  height: 200,
+                  width: 180,
+                  child: Image.asset(
                     'assets/gutter_logo.png',
+                  ),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 1, vertical: 10),
+                child: Material(
+                  color: Colors.red,
+                  elevation: 10,
+                  child: OutlinedButton(
+                    child: Padding(
+                      padding: const EdgeInsets.all(0.0),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 8.0, horizontal: 4),
+                            child: Icon(Icons.phone, color: Colors.white),
+                          ),
+                          Text(
+                            '(305) 399 - 3000',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                .copyWith(fontSize: 14),
+                          )
+                        ],
+                      ),
+                    ),
+                    onPressed: () async {
+                      const url = "tel:3053993000";
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
                   ),
                 ),
               ),

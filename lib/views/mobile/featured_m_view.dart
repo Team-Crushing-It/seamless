@@ -64,6 +64,7 @@ class _FeaturedMViewState extends State<FeaturedMView> {
           CarouselSlider.builder(
             itemCount: imgList.length,
             options: CarouselOptions(
+                height: 400,
                 autoPlay: true,
                 aspectRatio: 2.5,
                 enlargeCenterPage: true,
@@ -75,8 +76,11 @@ class _FeaturedMViewState extends State<FeaturedMView> {
             itemBuilder: (context, index, realIdx) {
               return Container(
                 child: Center(
-                    child: Image.network(imgList[index],
-                        fit: BoxFit.cover, width: 1000)),
+                    child: Image.network(
+                  imgList[index],
+                  fit: BoxFit.cover,
+                  width: 1000,
+                )),
               );
             },
           ),

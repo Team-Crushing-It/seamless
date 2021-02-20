@@ -195,7 +195,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
         builder: (context, child) => Container(
           color: colorTween.value,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               IconButton(

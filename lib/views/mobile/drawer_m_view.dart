@@ -14,10 +14,19 @@ class DrawerMView extends StatelessWidget {
     return BlocBuilder<MainCubit, String>(
       builder: (context, state) {
         return Drawer(
-          child: ListView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(7.0),
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                    onTap: () {
+                      pageChange('home');
+                    },
+                    child: Image.network('https://i.imgur.com/vmopqmw.png')),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(11.0),
                 child: TextButton(
                   child: Text(
                     'About',
@@ -33,7 +42,7 @@ class DrawerMView extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(7.0),
+                padding: const EdgeInsets.all(11.0),
                 child: TextButton(
                   child: Text(
                     'Services',
@@ -50,7 +59,7 @@ class DrawerMView extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(7.0),
+                padding: const EdgeInsets.all(11.0),
                 child: TextButton(
                   child: Text(
                     'Featured',
@@ -67,7 +76,7 @@ class DrawerMView extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(7.0),
+                padding: const EdgeInsets.all(11.0),
                 child: TextButton(
                   child: Text(
                     'Team',
@@ -83,7 +92,7 @@ class DrawerMView extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(7.0),
+                padding: const EdgeInsets.all(11.0),
                 child: TextButton(
                   child: Text(
                     'Contact',

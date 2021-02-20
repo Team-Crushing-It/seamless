@@ -75,28 +75,28 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
         width: double.infinity,
         child: Stack(
           children: [
-            OverflowBox(
-              alignment: Alignment(0, -1),
-              minWidth: 0.0,
-              minHeight: 0.0,
-              maxWidth: 2000,
-              child: Stack(
-                children: [
-                  Image.asset(
-                    'assets/house_picture.png',
-                    // scale: .5,
-                    // fit: BoxFit.fitWidth,
-                  ),
-                  FadeTransition(
-                    opacity: _overlayController,
-                    child: Image.asset(
-                      'assets/house_overlay.png',
-                      // scale: .5,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // OverflowBox(
+            //   alignment: Alignment(0, -1),
+            //   minWidth: 0.0,
+            //   minHeight: 700.0,
+            //   maxWidth: 2000,
+            //   child: Stack(
+            //     children: [
+            //       Image.asset(
+            //         'assets/house_picture.png',
+            //         // scale: .5,
+            //         // fit: BoxFit.fitWidth,
+            //       ),
+            //       FadeTransition(
+            //         opacity: _overlayController,
+            //         child: Image.asset(
+            //           'assets/house_overlay.png',
+            //           // scale: .5,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Container(
               height: 700,
               child: Stack(
@@ -142,7 +142,7 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
                     maxHeight: 1000,
                     maxWidth: 2000,
                     child: Container(
-                      alignment: Alignment(.3, 1),
+                      alignment: Alignment(0, 1),
                       child: Image.asset(
                         'assets/house.png',
                         scale: 1.5,
@@ -180,7 +180,7 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
                               child: Container(
                                 width: 700,
                                 padding: EdgeInsets.all(8),
-                                color: Colors.black26,
+                                // color: Colors.black26,
                                 child: RichText(
                                   text: TextSpan(
                                     text: 'Seamless Gutters \n',
@@ -197,7 +197,7 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
                                             .textTheme
                                             .headline4
                                             .copyWith(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                       ),
                                     ],
