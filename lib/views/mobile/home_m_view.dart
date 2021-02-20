@@ -17,7 +17,6 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
   AnimationController _slideController;
   AnimationController _slideController2;
   AnimationController _slideController3;
-  bool _visible = true;
 
   @override
   void initState() {

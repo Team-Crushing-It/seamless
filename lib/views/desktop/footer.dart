@@ -312,7 +312,7 @@ class Footer extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: OutlinedButton(
                             onPressed: () {
-                              Scaffold.of(context).showSnackBar(
+                              ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                     duration: const Duration(seconds: 5),
                                     content: Text('Added to List ! ')),

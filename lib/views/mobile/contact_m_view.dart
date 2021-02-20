@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'UIFake_m.dart' if (dart.library.html) 'dart:ui' as ui;
 import 'package:http/http.dart' as http;
 
 //ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
-import 'dart:ui' as ui;
 
 class ContactMView extends StatefulWidget {
   final GlobalKey key;
@@ -183,7 +181,7 @@ class _ContactMViewState extends State<ContactMView> {
 
                             // if gucci, display a Snackbar.
 
-                            Scaffold.of(context).showSnackBar(
+                            ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 duration: const Duration(seconds: 20),
                                 content: FutureBuilder<String>(
