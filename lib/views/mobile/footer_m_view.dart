@@ -100,176 +100,166 @@ class FooterM extends StatelessWidget {
                   )
                 ],
               )),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Container(
+            // width: 100,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  // width: 100,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 8.0,
-                          top: 70,
-                        ),
-                        child: Text(
-                          'Essential Links',
-                          style: TextStyle(
-                            fontFamily: "Arial",
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {
-                            pageChange('about');
-                          },
-                          child: Text(
-                            'About',
-                            style: TextStyle(
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {
-                            pageChange('services');
-                          },
-                          child: Text(
-                            'Services',
-                            style: TextStyle(
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {
-                            pageChange('featured');
-                          },
-                          child: Text(
-                            'Featured',
-                            style: TextStyle(
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 8.0,
+                    top: 70,
+                  ),
+                  child: Text(
+                    'Essential Links',
+                    style: TextStyle(
+                      fontFamily: "Arial",
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                Container(
-                  // width: 100,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 8.0,
-                          top: 70,
-                        ),
-                        child: Text(
-                          'Services',
-                          style: TextStyle(
-                            fontFamily: "Arial",
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
-                        ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      pageChange('about');
+                    },
+                    child: Text(
+                      'About',
+                      style: TextStyle(
+                        fontFamily: "Arial",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        color: Colors.grey[600],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () async {
-                            const url =
-                                "https://www.supremescreenenclosures.com";
-                            if (await canLaunch(url)) {
-                              await launch(url);
-                            } else {
-                              throw 'Could not launch $url';
-                            }
-                          },
-                          child: Text(
-                            'Screen Enclosures',
-                            style: TextStyle(
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      pageChange('services');
+                    },
+                    child: Text(
+                      'Services',
+                      style: TextStyle(
+                        fontFamily: "Arial",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        color: Colors.grey[600],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () async {
-                            const url =
-                                "https://www.supremehurricaneshutters.com";
-                            if (await canLaunch(url)) {
-                              await launch(url);
-                            } else {
-                              throw 'Could not launch $url';
-                            }
-                          },
-                          child: Text(
-                            'Hurricane Shutters',
-                            style: TextStyle(
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      pageChange('featured');
+                    },
+                    child: Text(
+                      'Featured',
+                      style: TextStyle(
+                        fontFamily: "Arial",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        color: Colors.grey[600],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () async {
-                            const url = "https://www.allcomfortsolutions.com";
-                            if (await canLaunch(url)) {
-                              await launch(url);
-                            } else {
-                              throw 'Could not launch $url';
-                            }
-                          },
-                          child: Text(
-                            'All Services',
-                            style: TextStyle(
-                              fontFamily: "Arial",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            // width: 100,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 8.0,
+                    top: 70,
+                  ),
+                  child: Text(
+                    'Services',
+                    style: TextStyle(
+                      fontFamily: "Arial",
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () async {
+                      const url = "https://www.supremescreenenclosures.com";
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    child: Text(
+                      'Screen Enclosures',
+                      style: TextStyle(
+                        fontFamily: "Arial",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        color: Colors.grey[600],
                       ),
-                    ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () async {
+                      const url = "https://www.supremehurricaneshutters.com";
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    child: Text(
+                      'Hurricane Shutters',
+                      style: TextStyle(
+                        fontFamily: "Arial",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () async {
+                      const url = "https://www.allcomfortsolutions.com";
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    child: Text(
+                      'All Services',
+                      style: TextStyle(
+                        fontFamily: "Arial",
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
+                        color: Colors.grey[600],
+                      ),
+                    ),
                   ),
                 ),
               ],

@@ -84,7 +84,7 @@ class _AboutMViewState extends State<AboutMView>
             ),
             // Right hand section with About Us
             Container(
-              height: 700,
+              height: 750,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(

@@ -195,7 +195,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
         builder: (context, child) => Container(
           color: colorTween.value,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Padding(
@@ -211,7 +211,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 2.0),
                 child: SizedBox(
                   height: 200,
-                  width: 180,
+                  width: 120,
                   child: Image.asset(
                     'assets/gutter_logo.png',
                   ),
@@ -219,7 +219,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 1, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                 child: Material(
                   color: Colors.red,
                   elevation: 10,
@@ -238,7 +238,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .headline1
-                                .copyWith(fontSize: 14),
+                                .copyWith(fontSize: 12),
                           )
                         ],
                       ),
