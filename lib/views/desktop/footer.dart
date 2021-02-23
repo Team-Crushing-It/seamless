@@ -51,7 +51,7 @@ class Footer extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('+1 (305) 399-3000'),
+                              child: SelectableText('+1 (305) 399-3000'),
                             )
                           ],
                         ),
@@ -71,7 +71,7 @@ class Footer extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('954gutters@gmail.com'),
+                              child: SelectableText('954gutters@gmail.com'),
                             )
                           ],
                         ),
@@ -94,8 +94,8 @@ class Footer extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('3456 NW 109th Way'),
-                                  Text('Coral Springs, FL 33065 USA')
+                                  SelectableText('3456 NW 109th Way'),
+                                  SelectableText('Coral Springs, FL 33065 USA')
                                 ],
                               ),
                             )
@@ -115,7 +115,7 @@ class Footer extends StatelessWidget {
                         bottom: 8.0,
                         top: 70,
                       ),
-                      child: Text(
+                      child: SelectableText(
                         'Essential Links',
                         style: TextStyle(
                           fontFamily: "Arial",
@@ -131,7 +131,7 @@ class Footer extends StatelessWidget {
                         onTap: () {
                           pageChange('about');
                         },
-                        child: Text(
+                        child: SelectableText(
                           'About',
                           style: TextStyle(
                             fontFamily: "Arial",
@@ -148,7 +148,7 @@ class Footer extends StatelessWidget {
                         onTap: () {
                           pageChange('services');
                         },
-                        child: Text(
+                        child: SelectableText(
                           'Services',
                           style: TextStyle(
                             fontFamily: "Arial",
@@ -165,7 +165,7 @@ class Footer extends StatelessWidget {
                         onTap: () {
                           pageChange('featured');
                         },
-                        child: Text(
+                        child: SelectableText(
                           'Featured',
                           style: TextStyle(
                             fontFamily: "Arial",
@@ -190,7 +190,7 @@ class Footer extends StatelessWidget {
                         bottom: 8.0,
                         top: 70,
                       ),
-                      child: Text(
+                      child: SelectableText(
                         'Services',
                         style: TextStyle(
                           fontFamily: "Arial",
@@ -211,7 +211,7 @@ class Footer extends StatelessWidget {
                             throw 'Could not launch $url';
                           }
                         },
-                        child: Text(
+                        child: SelectableText(
                           'Screen Enclosures',
                           style: TextStyle(
                             fontFamily: "Arial",
@@ -234,7 +234,7 @@ class Footer extends StatelessWidget {
                             throw 'Could not launch $url';
                           }
                         },
-                        child: Text(
+                        child: SelectableText(
                           'Hurricane Shutters',
                           style: TextStyle(
                             fontFamily: "Arial",
@@ -256,7 +256,7 @@ class Footer extends StatelessWidget {
                             throw 'Could not launch $url';
                           }
                         },
-                        child: Text(
+                        child: SelectableText(
                           'All Services',
                           style: TextStyle(
                             fontFamily: "Arial",
@@ -281,7 +281,7 @@ class Footer extends StatelessWidget {
                         bottom: 8.0,
                         top: 70,
                       ),
-                      child: Text(
+                      child: SelectableText(
                         'Newsletter',
                         style: TextStyle(
                           fontFamily: "Arial",
@@ -293,7 +293,7 @@ class Footer extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Text(
+                      child: SelectableText(
                         'Sign up here to learn more about our upcoming products and promotions',
                         style: TextStyle(
                           fontFamily: "Arial",
@@ -315,10 +315,11 @@ class Footer extends StatelessWidget {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                     duration: const Duration(seconds: 5),
-                                    content: Text('Added to List ! ')),
+                                    content:
+                                        SelectableText('Added to List ! ')),
                               );
                             },
-                            child: Text(
+                            child: SelectableText(
                               'Sign Up Now !',
                               style: Theme.of(context).textTheme.headline1,
                             ),

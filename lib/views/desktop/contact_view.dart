@@ -60,7 +60,7 @@ class _ContactViewState extends State<ContactView> {
       return 'success';
     } else {
       print('not success');
-      return 'not success';
+      throw Exception('not success');
     }
   }
 
