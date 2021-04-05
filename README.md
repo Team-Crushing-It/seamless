@@ -1,6 +1,6 @@
 # seamless
 
-An example landing page in Flutter Web
+An example landing page in Flutter Web, complete with a scrolling navbar and simple animations
 
 ![snippet of animations](https://github.com/Team-Crushing-It/seamless/blob/main/2021-04-05%2012.18.47.gif)
 
