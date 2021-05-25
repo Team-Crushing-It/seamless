@@ -32,6 +32,7 @@ class DrawerMView extends StatelessWidget {
                   child: Text(
                     'About',
                     style: TextStyle(
+                      fontSize: 16,
                       color: (state == 'about') ? Colors.red : Colors.blue[900],
                     ),
                   ),
@@ -48,6 +49,7 @@ class DrawerMView extends StatelessWidget {
                   child: Text(
                     'Services',
                     style: TextStyle(
+                      fontSize: 16,
                       color:
                           (state == 'services') ? Colors.red : Colors.blue[900],
                     ),
@@ -65,6 +67,7 @@ class DrawerMView extends StatelessWidget {
                   child: Text(
                     'Featured',
                     style: TextStyle(
+                      fontSize: 16,
                       color:
                           (state == 'featured') ? Colors.red : Colors.blue[900],
                     ),
@@ -82,6 +85,7 @@ class DrawerMView extends StatelessWidget {
                   child: Text(
                     'Team',
                     style: TextStyle(
+                      fontSize: 16,
                       color: (state == 'team') ? Colors.red : Colors.blue[900],
                     ),
                   ),
@@ -98,6 +102,7 @@ class DrawerMView extends StatelessWidget {
                   child: Text(
                     'Contact',
                     style: TextStyle(
+                      fontSize: 16,
                       color:
                           (state == 'contact') ? Colors.red : Colors.blue[900],
                     ),

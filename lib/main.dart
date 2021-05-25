@@ -231,7 +231,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
       builder: (context, state) {
         return ScreenTypeLayout(
           mobile: Scaffold(
-            extendBodyBehindAppBar: true,
+            // extendBodyBehindAppBar: true,
             key: scaffoldKey,
             drawer: DrawerMView(
               pageChange: (page) {
