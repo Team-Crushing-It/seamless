@@ -51,7 +51,7 @@ class Footer extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: SelectableText('+1 (305) 399-3000'),
+                              child: SelectableText('+1 (954) 451-0909'),
                             )
                           ],
                         ),
@@ -94,7 +94,7 @@ class Footer extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SelectableText('3456 NW 109th Way'),
+                                  SelectableText('3610 NW 118 Ave #3'),
                                   SelectableText('Coral Springs, FL 33065 USA')
                                 ],
                               ),
