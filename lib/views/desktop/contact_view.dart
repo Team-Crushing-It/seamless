@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:seamless_gutters/extensions.dart';
 //ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
 
 class ContactView extends StatefulWidget {
   final GlobalKey key;

@@ -185,7 +185,6 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
   ScrollController _scrollController;
   AnimationController _colorAnimationController;
   Animation _colorTween;
-  ScrollController _scrollController2;
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
@@ -275,7 +274,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
             //==================================================================
             body: Scrollbar(
               child: SingleChildScrollView(
-                physics: NeverScrollableScrollPhysics(),
+                // physics: NeverScrollableScrollPhysics(),
                 // controller: _scrollController2,
                 //Gotta remove that ton of pad
                 padding: EdgeInsets.only(top: 0),

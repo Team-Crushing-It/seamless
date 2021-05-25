@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 //ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
 import 'package:seamless_gutters/extensions.dart';
 
 class ContactMView extends StatefulWidget {
