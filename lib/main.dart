@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 import 'package:seamless_gutters/cubit/main_cubit.dart';
 
@@ -238,7 +237,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
             drawer: DrawerMView(
               pageChange: (page) {
                 if (page == 'home') {
-                  context.read<MainCubit>().home(homeKey); 
+                  context.read<MainCubit>().home(homeKey);
                 } else if (page == 'about') {
                   context.read<MainCubit>().about(aboutKey);
                 } else if (page == 'services') {
@@ -274,45 +273,42 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
               },
             ),
             //==================================================================
-            body: SmoothScrollWeb(
-              controller: _scrollController2,
-              child: Scrollbar(
-                child: SingleChildScrollView(
-                  physics: NeverScrollableScrollPhysics(),
-                  controller: _scrollController2,
-                  //Gotta remove that ton of pad
-                  padding: EdgeInsets.only(top: 0),
+            body: Scrollbar(
+              child: SingleChildScrollView(
+                physics: NeverScrollableScrollPhysics(),
+                // controller: _scrollController2,
+                //Gotta remove that ton of pad
+                padding: EdgeInsets.only(top: 0),
 
-                  child: Container(
-                    width: double.infinity,
-                    child: Column(
-                      children: [
-                        HomeMView(key: homeKey),
-                        AboutMView(
-                          key: aboutKey,
-                          state: state,
-                          pageChange: () =>
-                              {context.read<MainCubit>().contact(contactKey)},
-                        ),
-                        ServicesMView(key: servicesKey),
-                        FeaturedMView(key: featuredKey),
-                        TeamMView(key: teamKey),
-                        ContactMView(key: contactKey),
-                        FooterM(
-                          pageChange: (page) {
-                            if (page == 'home') {
-                              context.read<MainCubit>().home(homeKey);
-                            } else if (page == 'about') {
-                              context.read<MainCubit>().about(aboutKey);
-                            } else if (page == 'services') {
-                              context.read<MainCubit>().services(servicesKey);
-                            } else if (page == 'featured') {
-                              context.read<MainCubit>().featured(featuredKey);
-                            }
-                          },
-                        ),
-                      ],
-                    ),
+                child: Container(
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      HomeMView(key: homeKey),
+                      AboutMView(
+                        key: aboutKey,
+                        state: state,
+                        pageChange: () =>
+                            {context.read<MainCubit>().contact(contactKey)},
+                      ),
+                      ServicesMView(key: servicesKey),
+                      FeaturedMView(key: featuredKey),
+                      TeamMView(key: teamKey),
+                      ContactMView(key: contactKey),
+                      FooterM(
+                        pageChange: (page) {
+                          if (page == 'home') {
+                            context.read<MainCubit>().home(homeKey);
+                          } else if (page == 'about') {
+                            context.read<MainCubit>().about(aboutKey);
+                          } else if (page == 'services') {
+                            context.read<MainCubit>().services(servicesKey);
+                          } else if (page == 'featured') {
+                            context.read<MainCubit>().featured(featuredKey);
+                          }
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ),

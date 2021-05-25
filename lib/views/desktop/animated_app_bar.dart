@@ -44,7 +44,6 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               Container(
-                width: 500,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
