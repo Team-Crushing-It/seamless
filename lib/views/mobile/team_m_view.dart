@@ -79,6 +79,7 @@ class _TeamMViewState extends State<TeamMView> {
               ),
               PageView(
                 controller: _pageController,
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   Container(
                     alignment: Alignment(-0.5, 0.2),

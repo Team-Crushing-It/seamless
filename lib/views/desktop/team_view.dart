@@ -84,6 +84,7 @@ class _TeamViewState extends State<TeamView> {
               ),
               PageView(
                 controller: _pageController,
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   Container(
                     alignment: Alignment(-0.5, 0.2),
