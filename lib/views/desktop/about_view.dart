@@ -97,22 +97,30 @@ class _AboutViewState extends State<AboutView>
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Text('REASONS TO CHOOSE',
+                      child: Text('Licensed & Insured',
                           style: Theme.of(context).textTheme.headline5),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
                         width: 500,
-                        child: Text(
-                            'For more than 20 years, our gutter company has been proud' +
-                                ' to deliver long-lasting products and exceptional workmanship. ' +
-                                ' We utilize proven techniques and advanced tools every step of the way,' +
-                                ' producing a complete gutter system that continues to satisfy far into the future.' +
-                                '\n\nYou can take care of your home, roof, and lawn by installing seamless gutters. ' +
-                                'Seamless gutters keep the rainwater from damaging your yard and causing problems' +
-                                ' with your home’s exterior. Settle for nothing less than superior quality when you turn to our company for state-of-the-art seamless gutters.',
-                            style: Theme.of(context).textTheme.bodyText1),
+                        child: RichText(
+                          text: TextSpan(children: [
+                            TextSpan(
+                                text:
+                                    'For more than 20 years, our gutter company has been proud' +
+                                        ' to deliver long-lasting '),
+                            TextSpan(
+                                text: '6 - 7 in gutters. ',
+                                style: TextStyle(fontWeight: FontWeight.w900)),
+                            TextSpan(
+                                text: ' We utilize proven techniques and advanced tools every step of the way,' +
+                                    ' to make sure your gutters are installed with exceptional quality.' +
+                                    '\n\nYou can take care of your home, roof, and lawn by installing seamless gutters. ' +
+                                    'Seamless gutters keep the rainwater from damaging your yard and causing problems' +
+                                    ' with your home’s exterior. Settle for nothing less than superior quality when you turn to our company for state-of-the-art seamless gutters.'),
+                          ], style: Theme.of(context).textTheme.bodyText2),
+                        ),
                       ),
                     ),
                     Padding(

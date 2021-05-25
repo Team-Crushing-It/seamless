@@ -168,14 +168,14 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                             child: Icon(Icons.phone, color: Colors.white),
                           ),
                           Text(
-                            '(305) 399 - 3000',
+                            '(954) 451-0909',
                             style: Theme.of(context).textTheme.headline1,
                           )
                         ],
                       ),
                     ),
                     onPressed: () async {
-                      const url = "tel:3053993000";
+                      const url = "tel:9544510909";
                       if (await canLaunch(url)) {
                         await launch(url);
                       } else {
@@ -233,7 +233,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                             child: Icon(Icons.phone, color: Colors.white),
                           ),
                           Text(
-                            '(305) 399 - 3000',
+                            '(954) 451-0909',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline1
@@ -243,7 +243,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                     onPressed: () async {
-                      const url = "tel:3053993000";
+                      const url = "tel:9544510909";
                       if (await canLaunch(url)) {
                         await launch(url);
                       } else {

@@ -79,16 +79,52 @@ class _ContactMViewState extends State<ContactMView> {
             padding: const EdgeInsets.only(
               top: 20,
             ),
-            child: Text('CONTACT US',
-                style: Theme.of(context).textTheme.headline3),
+            child:
+                Text('CONTACT', style: Theme.of(context).textTheme.headline3),
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 64.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Visit Us',
+                        style: Theme.of(context).textTheme.headline5),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        children: [
+                          Text('3610 NW 118 Ave #3',
+                              style: Theme.of(context).textTheme.headline3),
+                          Text('Coral Springs FL 33065',
+                              style: Theme.of(context).textTheme.headline3),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Call Us', style: Theme.of(context).textTheme.headline5),
+                  Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Text('954-451-0909',
+                        style: Theme.of(context).textTheme.headline3),
+                  ),
+                ],
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.only(
               top: 20.0,
               bottom: 40,
             ),
-            child: Text('GET IN TOUCH',
-                style: Theme.of(context).textTheme.headline5),
+            child:
+                Text('Email Us', style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             width: 700,

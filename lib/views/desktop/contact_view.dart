@@ -76,157 +76,217 @@ class _ContactViewState extends State<ContactView> {
           Padding(
             padding: const EdgeInsets.only(
               top: 20,
+              bottom: 24,
             ),
-            child: Text('CONTACT US',
-                style: Theme.of(context).textTheme.headline3),
+            child:
+                Text('CONTACT', style: Theme.of(context).textTheme.headline3),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 20.0,
-              bottom: 40,
-            ),
-            child: Text('GET IN TOUCH',
-                style: Theme.of(context).textTheme.headline5),
-          ),
-          Container(
-            width: 700,
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: const Icon(Icons.person, color: Colors.red),
-                    title: TextFormField(
-                      // autofocus: true,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Please enter a name';
-                        }
-                        fName = value;
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: "Name",
-                      ),
-                    ),
-                  ),
-                  ListTile(
-                    leading: const Icon(Icons.phone, color: Colors.red),
-                    title: TextFormField(
-                      // autofocus: true,
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                      ],
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Please enter a number';
-                        }
-                        fNumber = value;
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: "Phone",
-                      ),
-                    ),
-                  ),
-                  ListTile(
-                    leading: const Icon(Icons.email, color: Colors.red),
-                    title: TextFormField(
-                      // autofocus: true,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Please enter an email';
-                        } else if (!value.isEmail) {
-                          return 'Please enter a valid email';
-                        }
-                        fEmail = value;
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: "Email",
-                      ),
-                    ),
-                  ),
-                  const Divider(
-                    height: 1.0,
-                  ),
-                  ListTile(
-                    leading: const Icon(Icons.message, color: Colors.red),
-                    title: TextFormField(
-                      // autofocus: true,
-                      keyboardType: TextInputType.multiline,
-                      minLines: 4,
-                      maxLines: 4,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Please enter a message';
-                        }
-                        fMessage = value;
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: "Message",
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      color: Colors.red,
-                      child: OutlinedButton(
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text(
-                            'SUBMIT',
-                            style: Theme.of(context).textTheme.headline1,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Container(
+                  width: 200,
+                  child: Column(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Visit Us',
+                              style: Theme.of(context).textTheme.headline5),
+                          Padding(
+                            padding: const EdgeInsets.all(24.0),
+                            child: Column(
+                              children: [
+                                Text('3610 NW 118 Ave #3',
+                                    style:
+                                        Theme.of(context).textTheme.headline3),
+                                Text('Coral Springs FL 33065',
+                                    style:
+                                        Theme.of(context).textTheme.headline3),
+                              ],
+                            ),
                           ),
-                        ),
-                        onPressed: () {
-                          if (_formKey.currentState.validate()) {
-                            // If the form is valid, send email.
-                            // postForm();
-
-                            // if gucci, display a Snackbar.
-
-                            showDialog(
-                              context: context,
-                              builder: (context) => FutureBuilder<String>(
-                                future: postForm(),
-                                builder: (context, snapshot) {
-                                  if (snapshot.hasData) {
-                                    Timer(
-                                      Duration(seconds: 1),
-                                      () {
-                                        Navigator.of(context).pop();
-                                        _formKey.currentState.reset();
-                                      },
-                                    );
-
-                                    return Center(
-                                      child: Icon(
-                                        Icons.check,
-                                        color: Colors.green,
-                                        size: 80,
-                                      ),
-                                    );
-                                  } else if (snapshot.hasError) {
-                                    return Text("${snapshot.error}");
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Call Us',
+                              style: Theme.of(context).textTheme.headline5),
+                          Padding(
+                            padding: const EdgeInsets.all(24.0),
+                            child: Text('954-451-0909',
+                                style: Theme.of(context).textTheme.headline3),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Divider(thickness: 1.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Send Email',
+                        style: Theme.of(context).textTheme.headline5),
+                    Container(
+                      width: 700,
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading:
+                                  const Icon(Icons.person, color: Colors.red),
+                              title: TextFormField(
+                                // autofocus: true,
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return 'Please enter a name';
                                   }
-                                  return Center(
-                                    child: CircularProgressIndicator(),
-                                  );
+                                  fName = value;
+                                  return null;
                                 },
+                                decoration: InputDecoration(
+                                  hintText: "Name",
+                                ),
                               ),
-                              barrierDismissible: false,
-                            );
-                          }
-                        },
+                            ),
+                            ListTile(
+                              leading:
+                                  const Icon(Icons.phone, color: Colors.red),
+                              title: TextFormField(
+                                // autofocus: true,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.allow(
+                                      RegExp(r'[0-9]')),
+                                ],
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return 'Please enter a number';
+                                  }
+                                  fNumber = value;
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  hintText: "Phone",
+                                ),
+                              ),
+                            ),
+                            ListTile(
+                              leading:
+                                  const Icon(Icons.email, color: Colors.red),
+                              title: TextFormField(
+                                // autofocus: true,
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return 'Please enter an email';
+                                  } else if (!value.isEmail) {
+                                    return 'Please enter a valid email';
+                                  }
+                                  fEmail = value;
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  hintText: "Email",
+                                ),
+                              ),
+                            ),
+                            const Divider(
+                              height: 1.0,
+                            ),
+                            ListTile(
+                              leading:
+                                  const Icon(Icons.message, color: Colors.red),
+                              title: TextFormField(
+                                // autofocus: true,
+                                keyboardType: TextInputType.multiline,
+                                minLines: 4,
+                                maxLines: 4,
+                                validator: (value) {
+                                  if (value.isEmpty) {
+                                    return 'Please enter a message';
+                                  }
+                                  fMessage = value;
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  hintText: "Message",
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                color: Colors.red,
+                                child: OutlinedButton(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Text(
+                                      'SUBMIT',
+                                      style:
+                                          Theme.of(context).textTheme.headline1,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (_formKey.currentState.validate()) {
+                                      // If the form is valid, send email.
+                                      // postForm();
+
+                                      // if gucci, display a Snackbar.
+
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) =>
+                                            FutureBuilder<String>(
+                                          future: postForm(),
+                                          builder: (context, snapshot) {
+                                            if (snapshot.hasData) {
+                                              Timer(
+                                                Duration(seconds: 1),
+                                                () {
+                                                  Navigator.of(context).pop();
+                                                  _formKey.currentState.reset();
+                                                },
+                                              );
+
+                                              return Center(
+                                                child: Icon(
+                                                  Icons.check,
+                                                  color: Colors.green,
+                                                  size: 80,
+                                                ),
+                                              );
+                                            } else if (snapshot.hasError) {
+                                              return Text("${snapshot.error}");
+                                            }
+                                            return Center(
+                                              child:
+                                                  CircularProgressIndicator(),
+                                            );
+                                          },
+                                        ),
+                                        barrierDismissible: false,
+                                      );
+                                    }
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 100.0),
