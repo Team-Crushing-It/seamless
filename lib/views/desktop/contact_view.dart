@@ -251,10 +251,11 @@ class _ContactViewState extends State<ContactView> {
             children: [
               Container(
                 height: 700,
+                width: 700,
                 color: Colors.red,
                 child: Image.network(
-                  'https://i.imgur.com/GKqdjYvh.png',
-                  fit: BoxFit.fill,
+                  'https://i.imgur.com/Eo8AhWq.png',
+                  fit: BoxFit.none,
                 ),
               ),
               Expanded(
