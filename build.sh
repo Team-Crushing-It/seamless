@@ -19,4 +19,4 @@ if [[ $DIR == *"Your branch is behind"* ]]; then
 fi
 
 # Build flutter for web
-$FLUTTER build web --release
+$FLUTTER build web --release --web-renderer html
