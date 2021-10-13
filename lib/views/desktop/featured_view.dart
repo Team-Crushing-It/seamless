@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class FeaturedView extends StatefulWidget {
   final GlobalKey key;
 
-  FeaturedView({@required this.key});
+  FeaturedView({required this.key});
 
   @override
   _FeaturedViewState createState() => _FeaturedViewState();
@@ -26,7 +26,7 @@ class _FeaturedViewState extends State<FeaturedView> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
       imgList.forEach((imageUrl) {
         precacheImage(NetworkImage(imageUrl), context);
       });

@@ -6,27 +6,27 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(100);
 
   // These are required
-  final AnimationController colorAnimationController;
-  final Animation colorTween;
+  final AnimationController? colorAnimationController;
+  final Animation? colorTween;
   final Function(String) pageChange;
   final GlobalKey<ScaffoldState> scaffoldKey;
   final String state;
 
   AnimatedAppBar({
-    @required this.colorAnimationController,
-    @required this.colorTween,
-    @required this.pageChange,
-    @required this.scaffoldKey,
-    @required this.state,
+    required this.colorAnimationController,
+    required this.colorTween,
+    required this.pageChange,
+    required this.scaffoldKey,
+    required this.state,
   });
 
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       desktop: AnimatedBuilder(
-        animation: colorAnimationController,
+        animation: colorAnimationController!,
         builder: (context, child) => Container(
-          color: colorTween.value,
+          color: colorTween!.value,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,7 +52,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'HOME',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'home')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -69,7 +69,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'ABOUT',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'about')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -86,7 +86,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'SERVICES',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'services')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -103,7 +103,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'FEATURED',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'featured')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -120,7 +120,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'TEAM',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'team')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -137,7 +137,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'CONTACT',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'contact')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -190,9 +190,9 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       mobile: AnimatedBuilder(
-        animation: colorAnimationController,
+        animation: colorAnimationController!,
         builder: (context, child) => Container(
-          color: colorTween.value,
+          color: colorTween!.value,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -202,7 +202,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: IconButton(
                     // Your drawer Icon
                     onPressed: () => {
-                          scaffoldKey.currentState.openDrawer(),
+                          scaffoldKey.currentState!.openDrawer(),
                         },
                     icon: Icon(Icons.menu, color: Colors.black)),
               ),
@@ -236,7 +236,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                             '(954) 451-0909',
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1
+                                .headline1!
                                 .copyWith(fontSize: 12),
                           )
                         ],

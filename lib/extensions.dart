@@ -1,5 +1,5 @@
-extension ExtendedString on String {
-  bool _hasMatch(String value, String pattern) {
+extension ExtendedString on String? {
+  bool _hasMatch(String? value, String pattern) {
     return (value == null) ? false : RegExp(pattern).hasMatch(value);
   }
 

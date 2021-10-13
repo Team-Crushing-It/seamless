@@ -44,35 +44,35 @@ class MainCubit extends Cubit<String> {
       };
 
   void home(GlobalKey key) => {
-        Scrollable.ensureVisible(key.currentContext,
+        Scrollable.ensureVisible(key.currentContext!,
             duration: const Duration(seconds: 1)),
         // emit('home'),
       };
 
   void about(GlobalKey key) => {
-        Scrollable.ensureVisible(key.currentContext,
+        Scrollable.ensureVisible(key.currentContext!,
             duration: const Duration(seconds: 1)),
         // emit('about'),
       };
   void services(GlobalKey key) => {
-        Scrollable.ensureVisible(key.currentContext,
+        Scrollable.ensureVisible(key.currentContext!,
             duration: const Duration(seconds: 1)),
         // emit('services'),
       };
 
   void featured(GlobalKey key) => {
-        Scrollable.ensureVisible(key.currentContext,
+        Scrollable.ensureVisible(key.currentContext!,
             duration: const Duration(seconds: 1)),
         // emit('featured'),
       };
 
   void team(GlobalKey key) => {
-        Scrollable.ensureVisible(key.currentContext,
+        Scrollable.ensureVisible(key.currentContext!,
             duration: const Duration(seconds: 1)),
         // emit('team'),
       };
   void contact(GlobalKey key) => {
-        Scrollable.ensureVisible(key.currentContext,
+        Scrollable.ensureVisible(key.currentContext!,
             duration: const Duration(seconds: 1)),
         // emit('contact'),
       };

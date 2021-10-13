@@ -13,11 +13,11 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String state;
 
   AnimatedAppBar({
-    @required this.colorAnimationController,
-    @required this.colorTween,
-    @required this.pageChange,
-    @required this.scaffoldKey,
-    @required this.state,
+    required this.colorAnimationController,
+    required this.colorTween,
+    required this.pageChange,
+    required this.scaffoldKey,
+    required this.state,
   });
 
   @override
@@ -53,7 +53,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'HOME',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'home')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -70,7 +70,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'ABOUT',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'about')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -87,7 +87,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'SERVICES',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'services')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -104,7 +104,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'FEATURED',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'featured')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -121,7 +121,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'TEAM',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'team')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -138,7 +138,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'CONTACT',
-                          style: Theme.of(context).textTheme.headline2.copyWith(
+                          style: Theme.of(context).textTheme.headline2!.copyWith(
                                 color: (state == 'contact')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -201,7 +201,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
               IconButton(
                   // Your drawer Icon
                   onPressed: () => {
-                        scaffoldKey.currentState.openDrawer(),
+                        scaffoldKey.currentState!.openDrawer(),
                       },
                   icon: Icon(Icons.menu, color: Colors.black)),
               SizedBox(

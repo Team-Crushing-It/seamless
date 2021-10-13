@@ -6,7 +6,7 @@ class DrawerView extends StatelessWidget {
   final Function(String) pageChange;
 
   DrawerView({
-    @required this.pageChange,
+    required this.pageChange,
   });
 
   @override

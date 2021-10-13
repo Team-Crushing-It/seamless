@@ -5,7 +5,7 @@ class FooterM extends StatelessWidget {
   final Function(String) pageChange;
 
   FooterM({
-    @required this.pageChange,
+    required this.pageChange,
   });
 
   @override

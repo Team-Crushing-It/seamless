@@ -6,7 +6,7 @@ class AboutView extends StatefulWidget {
   final Function() pageChange;
 
   AboutView(
-      {@required this.key, @required this.state, @required this.pageChange});
+      {required this.key, required this.state, required this.pageChange});
 
   @override
   _AboutViewState createState() => _AboutViewState();
@@ -14,7 +14,7 @@ class AboutView extends StatefulWidget {
 
 class _AboutViewState extends State<AboutView>
     with SingleTickerProviderStateMixin {
-  AnimationController _slideController;
+  late AnimationController _slideController;
 
   @override
   void initState() {

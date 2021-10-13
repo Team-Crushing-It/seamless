@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ServicesMView extends StatelessWidget {
   final GlobalKey key;
 
-  ServicesMView({@required this.key});
+  ServicesMView({required this.key});
 
   @override
   Widget build(BuildContext context) {

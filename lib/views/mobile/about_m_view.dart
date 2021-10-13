@@ -6,7 +6,7 @@ class AboutMView extends StatefulWidget {
   final Function() pageChange;
 
   AboutMView(
-      {@required this.key, @required this.state, @required this.pageChange});
+      {required this.key, required this.state, required this.pageChange});
 
   @override
   _AboutMViewState createState() => _AboutMViewState();
@@ -14,7 +14,7 @@ class AboutMView extends StatefulWidget {
 
 class _AboutMViewState extends State<AboutMView>
     with SingleTickerProviderStateMixin {
-  AnimationController _slideController;
+  late AnimationController _slideController;
 
   @override
   void initState() {

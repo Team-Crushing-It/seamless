@@ -25,7 +25,7 @@ import 'package:seamless_gutters/views/desktop/footer.dart';
 
 class PageObserver extends BlocObserver {
   @override
-  void onChange(Cubit cubit, Change change) {
+  void onChange(BlocBase cubit, Change change) {
     print('${cubit.runtimeType} $change');
     super.onChange(cubit, change);
   }
@@ -159,7 +159,7 @@ class MainApp extends StatelessWidget {
             textStyle: MaterialStateProperty.all<TextStyle>(
               TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
-            foregroundColor: MaterialStateProperty.resolveWith<Color>(
+            foregroundColor: MaterialStateProperty.resolveWith<Color?>(
               (Set<MaterialState> states) {
                 if (states.contains(MaterialState.hovered)) return Colors.red;
                 return Colors.blue[900]; // Use the component's default.
@@ -182,9 +182,9 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> with TickerProviderStateMixin {
-  ScrollController _scrollController;
-  AnimationController _colorAnimationController;
-  Animation _colorTween;
+   ScrollController? _scrollController;
+   AnimationController? _colorAnimationController;
+   Animation? _colorTween;
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
@@ -201,28 +201,28 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
     _colorAnimationController =
         AnimationController(vsync: this, duration: Duration(seconds: 0));
     _colorTween = ColorTween(begin: Colors.transparent, end: Colors.white)
-        .animate(_colorAnimationController);
+        .animate(_colorAnimationController!);
 
     //Scroll controller and listener
     _scrollController = ScrollController();
-    _scrollController.addListener(_scrollListener);
+    _scrollController!.addListener(_scrollListener);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _colorAnimationController.dispose();
-    _scrollController.dispose();
+    _colorAnimationController!.dispose();
+    _scrollController!.dispose();
 
     super.dispose();
   }
 
   //Passing the position from the controller to the cubit
   _scrollListener() {
-    final _scrollPozish = _scrollController.position.pixels;
+    final double _scrollPozish = _scrollController!.position.pixels;
     context.read<MainCubit>().scrollPozish(_scrollPozish);
-    _colorAnimationController.animateTo(_scrollPozish / 300);
+    _colorAnimationController?.animateTo(_scrollPozish / 300);
   }
 
   @override

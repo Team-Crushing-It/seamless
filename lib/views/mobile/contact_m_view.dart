@@ -10,7 +10,7 @@ import 'package:seamless_gutters/extensions.dart';
 class ContactMView extends StatefulWidget {
   final GlobalKey key;
 
-  ContactMView({@required this.key});
+  ContactMView({required this.key});
 
   @override
   _ContactMViewState createState() => _ContactMViewState();
@@ -19,10 +19,10 @@ class ContactMView extends StatefulWidget {
 class _ContactMViewState extends State<ContactMView> {
   final _formKey = GlobalKey<FormState>();
 
-  var fName = '';
-  var fNumber = '';
-  var fEmail = '';
-  var fMessage = '';
+  String? fName = '';
+  String? fNumber = '';
+  String? fEmail = '';
+  String? fMessage = '';
   var updateText = '';
 
   @override
@@ -43,18 +43,18 @@ class _ContactMViewState extends State<ContactMView> {
     // print(fEmail);
     // print(fMessage);
 
-    final response = await http.post(
+    final response = await http.post(Uri.parse(
         // https://localhost:5001/mail-server-301117/us-central1/
         // "https://us-central1-mail-server-301117.cloudfunctions.net/sendMail?type=seamlesse&location=testing&name=" +
 
         "https://us-central1-mail-server-301117.cloudfunctions.net/sendMail?type=gutters&location=testing&name=" +
-            fName +
+            fName! +
             "&number=" +
-            fNumber +
+            fNumber! +
             "&email=" +
-            fEmail +
+            fEmail! +
             "&message=" +
-            fMessage);
+            fMessage!));
 
     if (response.statusCode == 200) {
       print('success');
@@ -93,7 +93,7 @@ class _ContactMViewState extends State<ContactMView> {
                     title: TextFormField(
                       // autofocus: true,
                       validator: (value) {
-                        if (value.isEmpty) {
+                        if (value!.isEmpty) {
                           return 'Please enter a name';
                         }
                         fName = value;
@@ -112,7 +112,7 @@ class _ContactMViewState extends State<ContactMView> {
                         FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       ],
                       validator: (value) {
-                        if (value.isEmpty) {
+                        if (value!.isEmpty) {
                           return 'Please enter a number';
                         }
                         fNumber = value;
@@ -128,7 +128,7 @@ class _ContactMViewState extends State<ContactMView> {
                     title: TextFormField(
                       // autofocus: true,
                       validator: (value) {
-                        if (value.isEmpty) {
+                        if (value!.isEmpty) {
                           return 'Please enter an email';
                         } else if (!value.isEmail) {
                           return 'Please enter a valid email';
@@ -152,7 +152,7 @@ class _ContactMViewState extends State<ContactMView> {
                       minLines: 4,
                       maxLines: 4,
                       validator: (value) {
-                        if (value.isEmpty) {
+                        if (value!.isEmpty) {
                           return 'Please enter a message';
                         }
                         fMessage = value;
@@ -176,7 +176,7 @@ class _ContactMViewState extends State<ContactMView> {
                           ),
                         ),
                         onPressed: () async {
-                          if (_formKey.currentState.validate()) {
+                          if (_formKey.currentState!.validate()) {
                             // If the form is valid, send email.
                             // postForm();
 
@@ -191,7 +191,7 @@ class _ContactMViewState extends State<ContactMView> {
                                       Duration(seconds: 1),
                                       () {
                                         Navigator.of(context).pop();
-                                        _formKey.currentState.reset();
+                                        _formKey.currentState!.reset();
                                       },
                                     );
 

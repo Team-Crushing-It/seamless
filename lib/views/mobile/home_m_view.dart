@@ -5,18 +5,18 @@ import 'dart:async';
 class HomeMView extends StatefulWidget {
   final GlobalKey key;
 
-  HomeMView({@required this.key});
+  HomeMView({required this.key});
 
   @override
   _HomeMViewState createState() => _HomeMViewState();
 }
 
 class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
-  AnimationController _blockController;
-  AnimationController _overlayController;
-  AnimationController _slideController;
-  AnimationController _slideController2;
-  AnimationController _slideController3;
+  late AnimationController _blockController;
+  late AnimationController _overlayController;
+  late AnimationController _slideController;
+  late AnimationController _slideController2;
+  late AnimationController _slideController3;
 
   @override
   void initState() {
@@ -185,7 +185,7 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
                                     text: 'Seamless Gutters \n',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline4
+                                        .headline4!
                                         .copyWith(
                                           color: Colors.red,
                                         ),
@@ -194,7 +194,7 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
                                         text: 'Expert for Home or Business',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline4
+                                            .headline4!
                                             .copyWith(
                                               color: Colors.black,
                                             ),
@@ -218,7 +218,7 @@ class _HomeMViewState extends State<HomeMView> with TickerProviderStateMixin {
                                   '--- GET A FREE QUOTE',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline2
+                                      .headline2!
                                       .copyWith(
                                         color: Colors.red,
                                       ),

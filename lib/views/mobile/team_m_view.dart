@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TeamMView extends StatefulWidget {
   final GlobalKey key;
 
-  TeamMView({@required this.key});
+  TeamMView({required this.key});
 
   @override
   _TeamMViewState createState() => _TeamMViewState();
@@ -111,7 +111,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"The service from this company was fast and top quality."',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -124,7 +124,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'John Schmidt',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -139,7 +139,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Plantation, FL',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -200,7 +200,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"Very nice young men, professional, excellent price. I will use them again if I need more gutters!"',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -213,7 +213,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Terry Pedrianes',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -228,7 +228,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Coral Springs, FL',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -291,7 +291,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"Russell and his crew were great from the start as they installed gutters on my personal home."',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -304,7 +304,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Trevor Jackson',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -319,7 +319,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Miramar, FL',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -382,7 +382,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"I called Seamless Gutters and Russell  came out the next day to give me an estimate.."',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyText2!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -396,7 +396,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyText2
-                                      .copyWith(
+                                      ?.copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
                                           fontWeight: FontWeight.w900),
@@ -411,7 +411,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyText2
-                                      .copyWith(
+                                      ?.copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
                                           fontWeight: FontWeight.w900),
@@ -453,13 +453,13 @@ class _TeamMViewState extends State<TeamMView> {
 
   void nextPage() {
     print('next page');
-    _pageController.animateToPage(_pageController.page.toInt() + 1,
+    _pageController.animateToPage(_pageController.page!.toInt() + 1,
         duration: Duration(milliseconds: 400), curve: Curves.easeIn);
   }
 
   void previousPage() {
     print('prev page');
-    _pageController.animateToPage(_pageController.page.toInt() - 1,
+    _pageController.animateToPage(_pageController.page!.toInt()- 1,
         duration: Duration(milliseconds: 400), curve: Curves.easeIn);
   }
 }

@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class FeaturedMView extends StatefulWidget {
   final GlobalKey key;
 
-  FeaturedMView({@required this.key});
+  FeaturedMView({required this.key});
 
   @override
   _FeaturedMViewState createState() => _FeaturedMViewState();
@@ -26,7 +26,7 @@ class _FeaturedMViewState extends State<FeaturedMView> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
       imgList.forEach((imageUrl) {
         precacheImage(NetworkImage(imageUrl), context);
       });
