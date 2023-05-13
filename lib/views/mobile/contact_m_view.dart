@@ -80,7 +80,7 @@ class _ContactMViewState extends State<ContactMView> {
               top: 20,
             ),
             child:
-                Text('CONTACT', style: Theme.of(context).textTheme.headline3),
+                Text('CONTACT', style: Theme.of(context).textTheme.displaySmall),
           ),
           Container(
             width: 700,
@@ -172,7 +172,7 @@ class _ContactMViewState extends State<ContactMView> {
                           padding: const EdgeInsets.all(20.0),
                           child: Text(
                             'SUBMIT',
-                            style: Theme.of(context).textTheme.headline1,
+                            style: Theme.of(context).textTheme.displayLarge,
                           ),
                         ),
                         onPressed: () async {

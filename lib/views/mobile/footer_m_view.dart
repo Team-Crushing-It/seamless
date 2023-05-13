@@ -315,7 +315,7 @@ class FooterM extends StatelessWidget {
                         },
                         child: Text(
                           'Sign Up Now !',
-                          style: Theme.of(context).textTheme.headline1,
+                          style: Theme.of(context).textTheme.displayLarge,
                         ),
                       ),
                     ),

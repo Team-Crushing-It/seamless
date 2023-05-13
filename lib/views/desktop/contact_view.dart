@@ -79,7 +79,7 @@ class _ContactViewState extends State<ContactView> {
               bottom: 24,
             ),
             child:
-                Text('CONTACT', style: Theme.of(context).textTheme.headline3),
+                Text('CONTACT', style: Theme.of(context).textTheme.displaySmall),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,7 +186,7 @@ class _ContactViewState extends State<ContactView> {
                                     child: Text(
                                       'SUBMIT',
                                       style:
-                                          Theme.of(context).textTheme.headline1,
+                                          Theme.of(context).textTheme.displayLarge,
                                     ),
                                   ),
                                   onPressed: () {

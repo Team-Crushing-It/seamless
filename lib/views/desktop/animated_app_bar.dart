@@ -52,7 +52,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'HOME',
-                          style: Theme.of(context).textTheme.headline2!.copyWith(
+                          style: Theme.of(context).textTheme.displayMedium!.copyWith(
                                 color: (state == 'home')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -69,7 +69,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'ABOUT',
-                          style: Theme.of(context).textTheme.headline2!.copyWith(
+                          style: Theme.of(context).textTheme.displayMedium!.copyWith(
                                 color: (state == 'about')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -86,7 +86,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'SERVICES',
-                          style: Theme.of(context).textTheme.headline2!.copyWith(
+                          style: Theme.of(context).textTheme.displayMedium!.copyWith(
                                 color: (state == 'services')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -103,7 +103,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'FEATURED',
-                          style: Theme.of(context).textTheme.headline2!.copyWith(
+                          style: Theme.of(context).textTheme.displayMedium!.copyWith(
                                 color: (state == 'featured')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -120,7 +120,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'TEAM',
-                          style: Theme.of(context).textTheme.headline2!.copyWith(
+                          style: Theme.of(context).textTheme.displayMedium!.copyWith(
                                 color: (state == 'team')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -137,7 +137,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: TextButton(
                         child: Text(
                           'CONTACT',
-                          style: Theme.of(context).textTheme.headline2!.copyWith(
+                          style: Theme.of(context).textTheme.displayMedium!.copyWith(
                                 color: (state == 'contact')
                                     ? Colors.red
                                     : Colors.blue[900],
@@ -169,7 +169,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                           ),
                           Text(
                             '(954) 451-0909',
-                            style: Theme.of(context).textTheme.headline1,
+                            style: Theme.of(context).textTheme.displayLarge,
                           )
                         ],
                       ),
@@ -236,7 +236,7 @@ class AnimatedAppBar extends StatelessWidget implements PreferredSizeWidget {
                             '(954) 451-0909',
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1!
+                                .displayLarge!
                                 .copyWith(fontSize: 12),
                           )
                         ],

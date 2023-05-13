@@ -93,12 +93,12 @@ class _AboutMViewState extends State<AboutMView>
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text('ABOUT US',
-                          style: Theme.of(context).textTheme.headline3),
+                          style: Theme.of(context).textTheme.displaySmall),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text('Licensed & Insured',
-                          style: Theme.of(context).textTheme.headline5),
+                          style: Theme.of(context).textTheme.headlineSmall),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -119,7 +119,7 @@ class _AboutMViewState extends State<AboutMView>
                                     '\n\nYou can take care of your home, roof, and lawn by installing seamless gutters. ' +
                                     'Seamless gutters keep the rainwater from damaging your yard and causing problems' +
                                     ' with your home’s exterior. Settle for nothing less than superior quality when you turn to our company for state-of-the-art seamless gutters.'),
-                          ], style: Theme.of(context).textTheme.bodyText2),
+                          ], style: Theme.of(context).textTheme.bodyMedium),
                         ),
                       ),
                     ),
@@ -133,7 +133,7 @@ class _AboutMViewState extends State<AboutMView>
                             padding: const EdgeInsets.all(20.0),
                             child: Text(
                               'Learn More',
-                              style: Theme.of(context).textTheme.headline1,
+                              style: Theme.of(context).textTheme.displayLarge,
                             ),
                           ),
                           onPressed: () {

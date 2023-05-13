@@ -45,60 +45,6 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
 
-        //Text theme for mobile
-        accentTextTheme: TextTheme(
-          headline1: TextStyle(
-            color: Colors.white,
-            fontFamily: "Arial",
-            fontWeight: FontWeight.w700,
-            fontSize: 18,
-          ),
-          headline2: TextStyle(
-            fontFamily: "Arial",
-            fontWeight: FontWeight.w900,
-            fontSize: 12,
-          ),
-          headline3: TextStyle(
-            fontFamily: "Athelas",
-            fontWeight: FontWeight.w900,
-            color: Colors.red,
-            fontSize: 18,
-          ),
-          headline4: TextStyle(
-            fontFamily: "Athelas",
-            fontWeight: FontWeight.w700,
-            // color: Color(0xFF1B1B26),
-            fontSize: 48,
-          ),
-          headline5: TextStyle(
-            fontFamily: "Athelas",
-            fontWeight: FontWeight.w700,
-            color: Colors.black,
-            fontSize: 32,
-          ),
-          headline6: TextStyle(
-            fontFamily: "Arial",
-            fontWeight: FontWeight.w700,
-            fontSize: 24,
-          ),
-          bodyText1: TextStyle(
-            fontFamily: "Arial",
-            fontWeight: FontWeight.w900,
-            // color: Color(0xFF1B1B26),
-            fontSize: 12,
-            height: 2,
-            letterSpacing: 2.0,
-          ),
-          bodyText2: TextStyle(
-            fontFamily: "Arial",
-            fontWeight: FontWeight.w300,
-            color: Colors.grey[700],
-            fontSize: 12,
-            height: 2,
-            letterSpacing: 2.0,
-          ),
-        ),
-
         //Text theme for web
         textTheme: TextTheme(
           headline1: TextStyle(

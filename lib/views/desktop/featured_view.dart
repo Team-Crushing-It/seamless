@@ -26,7 +26,7 @@ class _FeaturedViewState extends State<FeaturedView> {
 
   @override
   void initState() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       imgList.forEach((imageUrl) {
         precacheImage(NetworkImage(imageUrl), context);
       });
@@ -51,7 +51,7 @@ class _FeaturedViewState extends State<FeaturedView> {
               top: 20,
             ),
             child: Text('FEATURED WORK',
-                style: Theme.of(context).textTheme.headline3),
+                style: Theme.of(context).textTheme.displaySmall),
           ),
           Padding(
             padding: const EdgeInsets.only(
@@ -59,7 +59,7 @@ class _FeaturedViewState extends State<FeaturedView> {
               bottom: 40,
             ),
             child: Text('RECENT PROJECTS',
-                style: Theme.of(context).textTheme.headline5),
+                style: Theme.of(context).textTheme.headlineSmall),
           ),
           CarouselSlider.builder(
             itemCount: imgList.length,

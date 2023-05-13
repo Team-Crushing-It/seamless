@@ -29,7 +29,7 @@ class _TeamMViewState extends State<TeamMView> {
                   top: 20,
                 ),
                 child: Text('OUR TEAM',
-                    style: Theme.of(context).textTheme.headline3),
+                    style: Theme.of(context).textTheme.displaySmall),
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -37,7 +37,7 @@ class _TeamMViewState extends State<TeamMView> {
                   bottom: 40,
                 ),
                 child: Text('CERTIFIED EXPERTS',
-                    style: Theme.of(context).textTheme.headline5),
+                    style: Theme.of(context).textTheme.headlineSmall),
               ),
               Image.network('https://i.imgur.com/UUcwLSbl.jpg'),
               Image.network('https://i.imgur.com/IBVRB7vl.jpg'),
@@ -111,7 +111,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"The service from this company was fast and top quality."',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -124,7 +124,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'John Schmidt',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -139,7 +139,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Plantation, FL',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -152,11 +152,11 @@ class _TeamMViewState extends State<TeamMView> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    // RaisedButton(
+                                    // ElevatedButton(
                                     //   onPressed: previousPage,
                                     //   child: Text('Previous'),
                                     // ),
-                                    RaisedButton(
+                                    ElevatedButton(
                                       onPressed: nextPage,
                                       child: Icon(Icons.arrow_forward_outlined,
                                           color: Colors.red),
@@ -200,7 +200,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"Very nice young men, professional, excellent price. I will use them again if I need more gutters!"',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -213,7 +213,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Terry Pedrianes',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -228,7 +228,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Coral Springs, FL',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -242,12 +242,12 @@ class _TeamMViewState extends State<TeamMView> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    RaisedButton(
+                                    ElevatedButton(
                                       onPressed: previousPage,
                                       child: Icon(Icons.arrow_back_outlined,
                                           color: Colors.red),
                                     ),
-                                    RaisedButton(
+                                    ElevatedButton(
                                       onPressed: nextPage,
                                       child: Icon(Icons.arrow_forward_outlined,
                                           color: Colors.red),
@@ -291,7 +291,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"Russell and his crew were great from the start as they installed gutters on my personal home."',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -304,7 +304,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Trevor Jackson',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -319,7 +319,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Miramar, FL',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -333,12 +333,12 @@ class _TeamMViewState extends State<TeamMView> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
-                                    RaisedButton(
+                                    ElevatedButton(
                                       onPressed: previousPage,
                                       child: Icon(Icons.arrow_back_outlined,
                                           color: Colors.red),
                                     ),
-                                    RaisedButton(
+                                    ElevatedButton(
                                       onPressed: nextPage,
                                       child: Icon(Icons.arrow_forward_outlined,
                                           color: Colors.red),
@@ -382,7 +382,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   '"I called Seamless Gutters and Russell  came out the next day to give me an estimate.."',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2!
+                                      .bodyMedium!
                                       .copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas'),
@@ -395,7 +395,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Jane Thomson',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyMedium
                                       ?.copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -410,7 +410,7 @@ class _TeamMViewState extends State<TeamMView> {
                                   'Weston, FL',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyText2
+                                      .bodyMedium
                                       ?.copyWith(
                                           color: Colors.white,
                                           fontFamily: 'Athelas',
@@ -423,12 +423,12 @@ class _TeamMViewState extends State<TeamMView> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    RaisedButton(
+                                    ElevatedButton(
                                       onPressed: previousPage,
                                       child: Icon(Icons.arrow_back_outlined,
                                           color: Colors.red),
                                     ),
-                                    // RaisedButton(
+                                    // ElevatedButton(
                                     //   onPressed: nextPage,
                                     //   child: Icon(Icons.arrow_forward_outlined,
                                     //       color: Colors.red),

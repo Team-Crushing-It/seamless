@@ -149,7 +149,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                                     CurveTween(curve: Curves.easeInQuart)),
                                 child: Text('YOUR TRUSTED',
                                     style:
-                                        Theme.of(context).textTheme.headline3),
+                                        Theme.of(context).textTheme.displaySmall),
                               ),
                             ),
                             // Seamless Gutter Expert ...
@@ -165,7 +165,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                                     text: 'Seamless Gutters ',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline4!
+                                        .headlineMedium!
                                         .copyWith(
                                           color: Colors.red,
                                         ),
@@ -174,7 +174,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                                         text: 'Expert for Home or Business',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline4!
+                                            .headlineMedium!
                                             .copyWith(
                                               color: Colors.black,
                                             ),
@@ -197,7 +197,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                                     '--- GET A FREE QUOTE',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline2!
+                                        .displayMedium!
                                         .copyWith(
                                           color: Colors.red,
                                         ),

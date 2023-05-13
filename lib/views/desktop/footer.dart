@@ -321,7 +321,7 @@ class Footer extends StatelessWidget {
                             },
                             child: SelectableText(
                               'Sign Up Now !',
-                              style: Theme.of(context).textTheme.headline1,
+                              style: Theme.of(context).textTheme.displayLarge,
                             ),
                           ),
                         ),

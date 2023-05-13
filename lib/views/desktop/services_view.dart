@@ -22,7 +22,7 @@ class ServicesView extends StatelessWidget {
                 top: 20,
               ),
               child: Text('OUR SERVICES',
-                  style: Theme.of(context).textTheme.headline3),
+                  style: Theme.of(context).textTheme.displaySmall),
             ),
             Padding(
               padding: const EdgeInsets.only(
@@ -30,7 +30,7 @@ class ServicesView extends StatelessWidget {
                 bottom: 40,
               ),
               child: Text('WHAT DO WE DO?',
-                  style: Theme.of(context).textTheme.headline5),
+                  style: Theme.of(context).textTheme.headlineSmall),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -53,7 +53,7 @@ class ServicesView extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Free Quotes',
-                              style: Theme.of(context).textTheme.headline6),
+                              style: Theme.of(context).textTheme.titleLarge),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -64,7 +64,7 @@ class ServicesView extends StatelessWidget {
                           ),
                           child: Text(
                             'We are ready 24/7 to help you protect your home and that’s why we offer free quotes',
-                            style: Theme.of(context).textTheme.bodyText2,
+                            style: Theme.of(context).textTheme.bodyMedium,
                             textAlign: TextAlign.center,
                           ),
                         )
@@ -90,7 +90,7 @@ class ServicesView extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Installation',
-                              style: Theme.of(context).textTheme.headline6),
+                              style: Theme.of(context).textTheme.titleLarge),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -101,7 +101,7 @@ class ServicesView extends StatelessWidget {
                           ),
                           child: Text(
                             'We install seamless gutters which are custom designed and colored for your needs',
-                            style: Theme.of(context).textTheme.bodyText2,
+                            style: Theme.of(context).textTheme.bodyMedium,
                             textAlign: TextAlign.center,
                           ),
                         )
@@ -127,7 +127,7 @@ class ServicesView extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Cleaning',
-                              style: Theme.of(context).textTheme.headline6),
+                              style: Theme.of(context).textTheme.titleLarge),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -138,7 +138,7 @@ class ServicesView extends StatelessWidget {
                           ),
                           child: Text(
                             'Maintenance can extend the life of your gutters by 2-3x, and that’s why we offer this routine service',
-                            style: Theme.of(context).textTheme.bodyText2,
+                            style: Theme.of(context).textTheme.bodyMedium,
                             textAlign: TextAlign.center,
                           ),
                         )
@@ -171,7 +171,7 @@ class ServicesView extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text('Repair',
-                                style: Theme.of(context).textTheme.headline6),
+                                style: Theme.of(context).textTheme.titleLarge),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
@@ -182,7 +182,7 @@ class ServicesView extends StatelessWidget {
                             ),
                             child: Text(
                               'It is common that most gutter problems are caused by improper installation. We can remedy this.',
-                              style: Theme.of(context).textTheme.bodyText2,
+                              style: Theme.of(context).textTheme.bodyMedium,
                               textAlign: TextAlign.center,
                             ),
                           )
@@ -208,7 +208,7 @@ class ServicesView extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text('Splash Guards',
-                                style: Theme.of(context).textTheme.headline6),
+                                style: Theme.of(context).textTheme.titleLarge),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
@@ -219,7 +219,7 @@ class ServicesView extends StatelessWidget {
                             ),
                             child: Text(
                               'With very large spans of roof, water may overshoot the gutter. With splash guards we can fix this',
-                              style: Theme.of(context).textTheme.bodyText2,
+                              style: Theme.of(context).textTheme.bodyMedium,
                               textAlign: TextAlign.center,
                             ),
                           )
@@ -245,7 +245,7 @@ class ServicesView extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text('Leaf Guards',
-                                style: Theme.of(context).textTheme.headline6),
+                                style: Theme.of(context).textTheme.titleLarge),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
@@ -256,7 +256,7 @@ class ServicesView extends StatelessWidget {
                             ),
                             child: Text(
                               'We also carry an assortment of leaf guards to protect your gutter from getting filled to begin with.',
-                              style: Theme.of(context).textTheme.bodyText2,
+                              style: Theme.of(context).textTheme.bodyMedium,
                               textAlign: TextAlign.center,
                             ),
                           )
